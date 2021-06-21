@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>MathLife</title>
+        <title>Lingerois</title>
         <link>https://flyzebraV.github.io/</link>
-        <description>Recent content on MathLife</description>
+        <description>Recent content on Lingerois</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>zh-cn</language>
         <lastBuildDate>Sat, 19 Jun 2021 11:19:17 +0800</lastBuildDate><atom:link href="https://flyzebraV.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>同态 加密12 GSW</title>
         <link>https://flyzebraV.github.io/p/%E5%90%8C%E6%80%81-%E5%8A%A0%E5%AF%8612-gsw/</link>
