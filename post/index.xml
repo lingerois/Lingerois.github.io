@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on MathLife</title>
-    <link>https://lingerois.github.io/post/</link>
+    <link>https://flyzebraV.github.io/post/</link>
     <description>Recent content in Posts on MathLife</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Jun 2021 11:19:17 +0800</lastBuildDate><atom:link href="https://lingerois.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Jun 2021 11:19:17 +0800</lastBuildDate><atom:link href="https://flyzebraV.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>同态 加密12 GSW</title>
-      <link>https://lingerois.github.io/p/%E5%90%8C%E6%80%81-%E5%8A%A0%E5%AF%8612-gsw/</link>
+      <link>https://flyzebraV.github.io/p/%E5%90%8C%E6%80%81-%E5%8A%A0%E5%AF%8612-gsw/</link>
       <pubDate>Sat, 19 Jun 2021 11:19:17 +0800</pubDate>
       
-      <guid>https://lingerois.github.io/p/%E5%90%8C%E6%80%81-%E5%8A%A0%E5%AF%8612-gsw/</guid>
+      <guid>https://flyzebraV.github.io/p/%E5%90%8C%E6%80%81-%E5%8A%A0%E5%AF%8612-gsw/</guid>
       <description>12GSW方案是由Craig Gentry, Amit Sahai与Brent Waters于2013年提出的方案, 发表于论文[GSW13]中.
 GSW方案确实如论文标题一样, 概念清晰明了, 其Intuition简单到一个刚学完线性代数的大一新生也能理解. GSW还支持基于属性的加密, 但本文中我们将不介绍这一部分内容.
 当然, 完全理解GSW方案仍然需要用到一些比较进阶的知识, 如LWE问题的困难性等. 我们在本文中不会对这些知识做过多的介绍, 这些知识将在今后其他的博文中介绍.
@@ -24,29 +24,30 @@ Basic Intuition 密文的基本格式 最基本的GSW同态加密方案的私钥
     
     <item>
       <title>独立文件夹标题123</title>
-      <link>https://lingerois.github.io/p/%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <link>https://flyzebraV.github.io/p/%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
       <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.github.io/p/%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <guid>https://flyzebraV.github.io/p/%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
       <description>hhh Test</description>
     </item>
     
     <item>
       <title>标题</title>
-      <link>https://lingerois.github.io/p/smart-watch/</link>
+      <link>https://flyzebraV.github.io/p/smart-watch/</link>
       <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.github.io/p/smart-watch/</guid>
+      <guid>https://flyzebraV.github.io/p/smart-watch/</guid>
       <description>结论 Test</description>
     </item>
     
     <item>
       <title>Test</title>
-      <link>https://lingerois.github.io/p/test/</link>
+      <link>https://flyzebraV.github.io/p/test/</link>
       <pubDate>Wed, 19 May 2021 11:19:17 +0800</pubDate>
       
-      <guid>https://lingerois.github.io/p/test/</guid>
-      <description>hello 1231</description>
+      <guid>https://flyzebraV.github.io/p/test/</guid>
+      <description>hello 1231
+more tests.</description>
     </item>
     
   </channel>

@@ -2,89 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on MathLife</title>
-    <link>https://lingerois.github.io/categories/</link>
+    <link>https://flyzebraV.github.io/categories/</link>
     <description>Recent content in Categories on MathLife</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lingerois.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://flyzebraV.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>技术</title>
-      <link>https://lingerois.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+      <title>密码学</title>
+      <link>https://flyzebraV.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</link>
       <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.github.io/categories/%E6%8A%80%E6%9C%AF/</guid>
+      <guid>https://flyzebraV.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>数学</title>
-      <link>https://lingerois.github.io/categories/%E6%95%B0%E5%AD%A6/</link>
+      <link>https://flyzebraV.github.io/categories/%E6%95%B0%E5%AD%A6/</link>
       <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.github.io/categories/%E6%95%B0%E5%AD%A6/</guid>
+      <guid>https://flyzebraV.github.io/categories/%E6%95%B0%E5%AD%A6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>其他</title>
-      <link>https://lingerois.github.io/categories/%E5%85%B6%E4%BB%96/</link>
+      <link>https://flyzebraV.github.io/categories/%E5%85%B6%E4%BB%96/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.github.io/categories/%E5%85%B6%E4%BB%96/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>密码学</title>
-      <link>https://lingerois.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://lingerois.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</guid>
+      <guid>https://flyzebraV.github.io/categories/%E5%85%B6%E4%BB%96/</guid>
       <description></description>
     </item>
     
     <item>
       <title>工具软件</title>
-      <link>https://lingerois.github.io/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/</link>
+      <link>https://flyzebraV.github.io/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.github.io/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/</guid>
+      <guid>https://flyzebraV.github.io/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>算法</title>
-      <link>https://lingerois.github.io/categories/%E7%AE%97%E6%B3%95/</link>
+      <link>https://flyzebraV.github.io/categories/%E7%AE%97%E6%B3%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.github.io/categories/%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://flyzebraV.github.io/categories/%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>计算理论</title>
-      <link>https://lingerois.github.io/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</link>
+      <link>https://flyzebraV.github.io/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.github.io/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</guid>
+      <guid>https://flyzebraV.github.io/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</guid>
       <description></description>
     </item>
     
     <item>
       <title>记录</title>
-      <link>https://lingerois.github.io/categories/%E8%AE%B0%E5%BD%95/</link>
+      <link>https://flyzebraV.github.io/categories/%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.github.io/categories/%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://flyzebraV.github.io/categories/%E8%AE%B0%E5%BD%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>量子计算</title>
-      <link>https://lingerois.github.io/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/</link>
+      <link>https://flyzebraV.github.io/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.github.io/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/</guid>
+      <guid>https://flyzebraV.github.io/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/</guid>
       <description></description>
     </item>
     
