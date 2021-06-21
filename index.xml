@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>MathLife</title>
+        <link>https://lingerois.github.io/</link>
+        <description>Recent content on MathLife</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sat, 19 Jun 2021 11:19:17 +0800</lastBuildDate><atom:link href="https://lingerois.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>同态 加密12 GSW</title>
+        <link>https://lingerois.github.io/p/%E5%90%8C%E6%80%81-%E5%8A%A0%E5%AF%8612-gsw/</link>
+        <pubDate>Sat, 19 Jun 2021 11:19:17 +0800</pubDate>
+        
+        <guid>https://lingerois.github.io/p/%E5%90%8C%E6%80%81-%E5%8A%A0%E5%AF%8612-gsw/</guid>
+        <description>&lt;p&gt;12GSW方案是由&lt;a class=&#34;link&#34; href=&#34;%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%85%a8%e5%90%8c%e6%80%81%e5%8a%a0%e5%af%86%e6%96%b9%e6%a1%88%e7%9a%84%e4%ba%ba,%e5%8f%af%e4%bb%a5%e8%af%b4%e6%98%af%e5%90%8c%e6%80%81%e5%8a%a0%e5%af%86%e6%96%b9%e6%a1%88%e7%9a%84%e9%bc%bb%e7%a5%96.%e7%8e%b0%e5%9c%a8%e7%9a%84%e5%a4%a7%e5%a4%9a%e6%95%b0%e5%90%8c%e6%80%81%e5%8a%a0%e5%af%86%e6%96%b9%e6%a1%88%e9%83%bd%e6%98%af%e5%9c%a8Gentry%e6%9c%80%e5%88%9d%e7%9a%84%e6%96%b9%e6%a1%88%e7%9a%84%e5%9f%ba%e7%a1%80%e4%b8%8a%e6%94%b9%e9%80%a0%e8%80%8c%e6%9d%a5%e7%9a%84.&#34;  title=&#34;Craig Gentry&#34;
+    &gt;Craig Gentry&lt;/a&gt;, Amit Sahai与Brent Waters于2013年提出的方案, 发表于论文[GSW13]中.&lt;/p&gt;
+&lt;p&gt;GSW方案确实如论文标题一样, 概念清晰明了, 其Intuition简单到一个刚学完线性代数的大一新生也能理解. GSW还支持基于属性的加密, 但本文中我们将不介绍这一部分内容.&lt;/p&gt;
+&lt;p&gt;当然, 完全理解GSW方案仍然需要用到一些比较进阶的知识, 如LWE问题的困难性等. 我们在本文中不会对这些知识做过多的介绍, 这些知识将在今后其他的博文中介绍.&lt;/p&gt;
+&lt;h1 id=&#34;basic-intuition&#34;&gt;Basic Intuition&lt;/h1&gt;
+&lt;h2 id=&#34;密文的基本格式&#34;&gt;密文的基本格式&lt;/h2&gt;
+&lt;p&gt;最基本的GSW同态加密方案的私钥($sk$)是一个向量$\mathbf v\in\mathbb Z_q^N$, 而所有的明文$\mu_i\in{0,1}$都被加密一个矩阵$C_i\in\mathbb Z_q^{N\times N}$中, 其中$C_i$是以$v$为近似特征向量并以$\mu_i$为近似特征值的矩阵, 即我们要求
+$$
+C_i\mathbf v\approx \mu_i \mathbf v
+$$
+这里可以看出， 我们只需要挑选$\mathbf v$中非$0$的位(最好是选较大的位), 如第$j$位$v_j$, 并比较$v_j$与$\mu_iv_j$的值就可以解出$\mu_i$的值.&lt;/p&gt;
+&lt;p&gt;一个需要注意的地方就是, 虽然$\mu_i$取自${0,1}$, 但被视作是$\mathbb Z_q$中的元素, 因此具体的运算也是按照$\mathbb Z_q$的运算方式来进行.&lt;/p&gt;
+&lt;p&gt;我们也可以将噪声(error)显式地写出来, 记作
+$$
+C_i\mathbf v=\mu_i\mathbf v+\mathbf e
+$$
+其中$\mathbf e$是非常小的向量. 因此可以看出, 如果$\mathbf e$确实是一个较小的噪声, 那么我们就可以正确地解出$\mu_i$.&lt;/p&gt;
+&lt;h2 id=&#34;乘法同态性质&#34;&gt;乘法同态性质&lt;/h2&gt;
+&lt;p&gt;现在我们来验证该加密方案具有同态性质. 现在假设有两个密文$C_1, C_2$, 对对应的明文分别是$\mu_1,\mu_2$, 即
+$$
+C_1\mathbf v=\mu_1\mathbf v+\mathbf e_1\&lt;br&gt;
+C_2\mathbf v=\mu_2\mathbf v+\mathbf e_2\&lt;br&gt;
+$$
+其中$\mathbf e_1,\mathbf e_2$均为较小的噪声, 那么令$C^\times=C_1\cdot C_2$, 我们检验$C^\times$的解密结果
+$$
+\begin{aligned}
+C^\times\mathbf v &amp;amp;=(C_1\cdot C_2)\mathbf v \&lt;br&gt;
+&amp;amp;=C_1(\mu_2\mathbf v+\mathbf e_2) \&lt;br&gt;
+&amp;amp;=\mu_2(\mu_1\mathbf v+\mathbf e_1)+C_1\mathbf e_2\&lt;br&gt;
+&amp;amp;= \mu_1\mu_2\mathbf v+\mu_2\mathbf e_1+C_1\mathbf e_2
+\end{aligned}
+$$
+这里可以看出, $\mu_2\mathbf e_1$确实是一个比较小的噪声项, 但是要让$C^\times$的噪声比较小, 那么就需要让$C_1$是一个较小的矩阵(即其最大的元素较小), 我们稍后会解释如何做到这一点.&lt;/p&gt;
+&lt;p&gt;虽然说是乘法同态性质, 但是由于$\mu_i\in{0,1}$, 我们也可以将$C^\times$视作是做了同态的与(AND)运算. 与运算相对来说是比较简单的, 但是仅有与运算是不够的, 因为与运算是单调的, 单调的电路不可能是完备的, 我们需要实现一个超强的逻辑门&amp;mdash;-与非门的同态运算.&lt;/p&gt;
+&lt;h2 id=&#34;与非门的同态性质&#34;&gt;与非门的同态性质&lt;/h2&gt;
+&lt;p&gt;设$C^\mathsf{NAND}=I_N-C_1C_2$, 其中$I_N$为$N$阶单位矩阵, 则
+$$
+\begin{aligned}
+C^\mathsf{NAND}\mathbf v&amp;amp;=(I_N-C_1C_2)\mathbf v \&lt;br&gt;
+&amp;amp;=(1-\mu_1\mu_2)\mathbf v-\mu_2\mathbf e_1-C_1\mathbf e_2
+\end{aligned}
+$$
+根据之前的讨论, 如果$C_1$是一个较小的项, 我们有把握能从$C^\mathsf{NAND}$中解出$\mathsf{NAND}(\mu_1,\mu_2)$.&lt;/p&gt;
+&lt;p&gt;到这里有没有一种心情舒畅的感觉? 与非门生万物, 我们确实可以通过不断地叠加与非门来实现相当复杂的函数运算, 并且由于与非门是完备的, 仅用与非门可以实现任何一个布尔函数.&lt;/p&gt;
+&lt;h2 id=&#34;别高兴得太早&#34;&gt;别高兴得太早!&lt;/h2&gt;
+&lt;p&gt;虽然与非门非常强大, 但是每一次进行与非门运算, 都会导致新密文得噪声变得更大, 因此较多层的运算后, 噪声可能大得导致解密错误! 因此我们必须评估我们究竟能进行多少次的运算, 以及在快要达到极限的时候使用Bootstrapping技术. 这一点我们将在详细介绍方案的时候来说明.&lt;/p&gt;
+&lt;h2 id=&#34;lattice-gadget&#34;&gt;Lattice Gadget&lt;/h2&gt;
+&lt;p&gt;这里我们要首先介绍一种工具, 我们称其为Lattice Gadget, 它的本质是一些代数运算, 能够辅助我们从标准的LWE加密方案生成满足同态性质的密文.&lt;/p&gt;
+&lt;p&gt;第一个运算是$\mathsf{BitDecomp}$, 它的作用是将一个$\mathbf a=(a_1,\cdots,a_n)\in\mathbb Z_q^n$向量的每一位按照二进制展开, 即每一个元素$a_i$表示成二进制的形式$a_0,a_1,\cdots,a_\ell$, 其中$\ell=\lfloor\log q\rfloor+1$. 即
+$$
+\begin{aligned}
+\mathsf{Bit}&amp;amp;\mathsf{Decomp}(\mathbf a)=\ &amp;amp;(a_{1,0},\cdots,a_{1,\ell-1},\cdots,a_{n,0},\cdots,a_{n,\ell-1})
+\end{aligned}
+$$
+即将$\mathbf a$的每一位都展开成了二进制, 变成$\ell$位, 整个结果一共是$n\cdot \ell$位. 显然, $a_i=\sum_{j=0}^{\ell-1} 2^j\cdot a_{i,j}$.&lt;/p&gt;
+&lt;p&gt;类似的, 我们可以定义$\mathsf{BitDecomp}$的反函数$\mathsf{BitDecomp}^{-1}$, 令$\mathbf a&#39;=(a_{1,0},\cdots,a_{1,\ell},\cdots,a_{n,0},\cdots,a_{n,\ell})\in\mathbb Z_q^{n\cdot \ell}$
+$$
+\begin{aligned}
+\mathsf{Bit}&amp;amp;\mathsf{Decomp}^{-1}(\mathbf a&#39;)=\ &amp;amp;(\sum_{j=0}^{\ell-1} 2^j\cdot a_{1,j},\cdots, \sum_{j=0}^{\ell-1} 2^j\cdot a_{n,j})
+\end{aligned}
+$$
+即将每一位的二进制表示重新组合成了$\mathbb Z_q$表示. 但是要注意的是, $\mathsf{BitDecomp}$并没有要求参数一定要是只由${0,1}$构成的向量, 我们可以定义一个全新的函数
+$$
+\begin{aligned}
+\mathsf{Flatten}(&amp;amp;\mathbf a&#39;)=\ &amp;amp;\mathsf{BitDecomp}(\mathsf{BitDecomp}^{-1}(\mathbf a&#39;))
+\end{aligned}
+$$
+这个操作有什么意义? 它将那些不是全由${0,1}$构成的$\mathbf a&#39;\in\mathbb Z^{n\cdot \ell}$重新&amp;quot;抹平&amp;quot;成了由${0,1}$中的元素构成, 并且能够保持其一定的性质.&lt;/p&gt;
+&lt;p&gt;下面介绍另一个不是那么好看, 但是却非常简单的操作$\mathsf{Powerof2}$. $\mathsf{Powerof2}$的功能也是将一个$\mathbf b\in\mathbb Z_q^n$向量转换为$\mathbf b&#39;\in\mathbb Z_q^{n\cdot \ell}$向量, 但是却使用的是完全不一样的方式.
+$$
+\begin{aligned}
+\mathsf{Power}{of2}&amp;amp;\mathsf(\mathbf b)=(b_1,2b_1,\cdots,\ &amp;amp;2^{\ell-1}b_1,\cdots, b_n,2b_n,\cdots,2^{\ell-1}b_n)
+\end{aligned}
+$$
+即将$\mathbf b$的每一位, 展开为$\ell$位, 并且后一位是前一位的两倍. 使得整个向量变成$\mathbf b&#39;$. 这样做的好处是, 如果$a_i,b_i$分别是$\mathbf a,\mathbf b\in\mathbb Z_q^n$中的一位, 那么
+$$
+a_i\cdot b_i=\sum_{j=1}^{\ell -1}2^j \cdot a_{i,j}\cdot b_i=\sum_{j=1}^{\ell-1}(a_{i,j})\cdot (2^{j}\cdot b_j)
+$$
+前面一部分就是$\mathbf a&#39;$中第$i$组的第$j$位, 而后一部分就是$\mathbf b&#39;$中第$i$组的第$j$位, 那么显然有
+$$
+\langle \mathbf a,\mathbf b\rangle=\langle\mathsf{BitDecomp}(\mathbf a),\mathsf{Powerof2}(\mathbf b)\rangle
+$$
+如果将$\mathsf{BitDecomp}(\mathbf a)$直接写成$\mathbf a&#39;$的形式, 我们还有
+$$
+\begin{aligned}
+\langle\mathbf a&#39;,&amp;amp;\mathsf{Powerof2}(\mathbf b)\rangle \&lt;br&gt;
+&amp;amp;=\langle\mathsf{BitDecomp}^{-1}(\mathbf a&#39;),\mathbf b\rangle \&lt;br&gt;
+&amp;amp;=\langle \mathsf{Flatten}(\mathbf a&#39;),\mathsf{Powerof2}(\mathbf b)\rangle
+\end{aligned}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一个等号左边, 可以通过对第一个等号右边的两项分别做$\mathsf{BitDecomp}$和$\mathsf{Powerof2}$操作得到&lt;/li&gt;
+&lt;li&gt;第二个等号右边可以对第二个等号左边两项分别做$\mathsf{BitDecomp}$和$\mathsf{Powerof2}$操作得到&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;实际上左右两边的两项都是由中间得到的, 这样就可以将左右两边连接在一起. 这样我们发现一个惊人的事实: 如果内积的第二项是标准的$\mathsf{Powerof2}$结果的形式, 那么对第一项做$\mathsf{Flatten}$操作不会改变内积的结果! 实际上这也不难理解, 因为Flatten操作就是把数值过高的位分到权重更高的位而已. 但是这样做有一个好处就是, 使得$\mathbf a&#39;$变成每一位都是${0,1}$的$\mathsf{Flatten}({\mathbf  a&#39;})$.&lt;/p&gt;
+&lt;p&gt;我们将以上几种记号都推广到对矩阵可用, 例如对于$C=[\mathbf c_1,\cdots,\mathbf c_N]$, 令
+$$
+\begin{aligned}
+\mathsf{Flatten}(&amp;amp;C)\&lt;br&gt;
+&amp;amp;=[\mathsf{Flatten}(\mathbf c_1),\cdots,\mathsf{Flatten}(\mathbf c_N)]
+\end{aligned}
+$$
+其余几种记号也做类似的推广, 总之就是, 对矩阵的每一列的列向量做相应的操作. 这时我们发现, 如果密钥$\mathbf v$确实是某个向量$\mathbf s$进行$\mathsf{Powerof2}$的结果, 即$\mathbf v=\mathsf{Powerof2}(s)$, 那么就有
+$$
+C_i\mathbf v=\mathsf{Flatten}(C_i)\mathbf v
+$$
+这可以使得$C_i&#39;=\mathsf{Flatten}(C_i)$变成一个较小的矩阵, 而不改变最后与$\mathbf v$的相乘的结果! 这样使得$C&#39;_i$可以代替$C_i$进行下一层的同态运算使得我们要求的$C_2$项较小! 我们直接将$\mathsf{NAND}$的结果记作
+$$
+C^{\mathsf{NAND}}=\mathsf{Flatten}(I_N-C_1C_2)
+$$&lt;/p&gt;
+&lt;h1 id=&#34;gsw方案&#34;&gt;GSW方案&lt;/h1&gt;
+&lt;p&gt;现在我们开始具体介绍方案. 我们要说的是, GSW方案根据解密算法的选区不同, 实际上有构造两套方案. 第一种是选择$\mathsf{Dec}$作为解密算法, 该算法仅能解出$\mu_i\in{0,1}$, 因此整个同态运算中主要用与非门构建逻辑电路进行计算. 另一个解密算法$\mathsf{MPDec}$可以解出$\mu_i\in\mathbb Z_q$, 这样就可以自然地使用加法与乘法进行运算.&lt;/p&gt;
+&lt;p&gt;首先我们要说的是, GSW并不是一个标准假设下的全同态加密方案. GSW如果要做到全同态加密, 需要用到Bootstrapping, 进而需要用到LWE加密方案的Circular Security假设(即用一对公私钥中的公钥来加密私钥相关信息的加密结果是安全的). 我们这里不介绍Bootstrapping的具体过程, 仅介绍Somewhat HE.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathsf{Setup}(1^\lambda,1^L)$: 我们用$\lambda$表示安全参数, $L$表示同态运算的层数, 则$|q|=\kappa(\lambda,L)$表示模数$q$的位数. 选择$n=n(\lambda,L)$和LWE的错误分布$\chi=\chi(\lambda,L)$, 选择$m=m(\lambda,L)=O(n\log n)$. 设$\ell=\lfloor\log q\rfloor+1$和$N=(n+1)\cdot \ell$, 参数集$params=(n,q,\chi,m)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里的参数较多, 需要逐一解释一下. 首先$\lambda$是安全参数, 表示密码方案中基于的困难的问题的复杂程度, 所有的参数都应该(直接或间接)基于这个参数选择. 参数$L$表示同态运算的层数, 由于同态运算的层数由噪声的占比决定, 因此想要做更多的同态运算次数, 那么噪声就不应该太快掩盖$q$, $q$就应该相应地选择大一些. 而LWE问题的错误分布$\chi$还有维数$n$按理来说是应该根据$\lambda$来选择, 但是这两个参数是可以根据$q$来进行权衡(tradeoff)的, 这里直接用基础参数$L$来代替$q$. 而参数$\ell,N$则是为了方便我们进行表示而引入的记号, 并且他们在前面也出现过.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathsf{SecretKeyGen}(params)$: 选择$\mathbf t\leftarrow \mathbb Z_q^n$, 令$\mathbf s\leftarrow (1,-\mathbf t)=(1,-t_1,\cdots,-t_n)\in\mathbb Z_q^{n+1}$,$\mathbf v=\mathsf{Powerof2}(\mathbf s)$. 输出$sk=\mathbf s$.&lt;/li&gt;
+&lt;li&gt;$\mathsf{PublicKeyGen}(params,sk)$: 生成矩阵$B\leftarrow \mathbb Z_q^{m\times n}$和$\mathbf e\leftarrow\chi^m$. 令$\mathbf b=B\mathbf t+\mathbf e$. 令$A=[\mathbf b|B]$, 输出公钥$pk=A$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;实际上这里就是变相生成了一组LWE问题的实例.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathsf{Enc}(params,sk,\mu)$: 生成矩阵$R\leftarrow {0,1}^{N\times m}$, 输出密文
+$$
+\begin{aligned}
+&amp;amp;C \&lt;br&gt;
+&amp;amp;=\mathsf{Flatten}(\mu\cdot I_N+\mathsf{BitDecomp}(R\cdot A))
+\end{aligned}
+$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这就是整个加密的过程, 其中$\mathsf{Flatten}$操作是为了保证$C$是一个较小的矩阵, 我们知道$\mathbf v$是一个$\mathsf{Powerof2}$向量, 那么
+$$
+\begin{aligned}
+C\mathbf v 
+&amp;amp;=(\mu\cdot I_N+\mathsf{BitDecomp}(R\cdot A))\mathbf v \&lt;br&gt;
+&amp;amp;= \mu\cdot I_N\cdot \mathbf v + R\cdot A\cdot \mathbf s \&amp;amp;= \mu\cdot \mathbf v+R\cdot \mathbf e
+\end{aligned}
+$$
+$R\cdot \mathbf e$也是一个小噪声, 因此密文符合我们的要求.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathsf{Dec}(params, pk,C)$: 选择一个$\mathbf v$的系数$v_i=2^i\in (q/4,2/q]$. 设$C_{i}$是$C$的第$i$列, 则计算$x_i=\langle C_i,v_i\rangle$, 输出解密结果$\mu&#39;=\lfloor x_i/v_i\rceil$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;实际上这里的解密过程就是比较$C\mathbf v$与$\mathbf v$的值. 而为了使得解密出错的概率最低, 所以选择$v_i$较大的一项, 这样使得错误最多可以积累到$q/4$而解密不出错.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathsf{MPDec}(params,sk,C)$: 参考[MP12].&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;噪声分析&#34;&gt;噪声分析&lt;/h1&gt;
+&lt;p&gt;接下来我们看一下进行$L$层同态运算后, 噪声的增长. 我们知道, 两个噪声为$E$的密文行一次加法运算, 噪声增长到$2E$. (这里$E=\max_{i\in [N]}\mathbf e$, 表示解密中的噪声项), 而两个噪声为$E$的密文乘法结果的的噪声项为$\mu_2\mathbf e_1+C_1\mathbf e_2$, 最多为$(N+1)B^2$. 如果初始噪声为$E$的密文进行$L$层运算, 则噪声最多增长为$(N+1)^LB^{2^L}$, 由这一点可以看出, 我们最多可以进行对数次数的同态运算. 但是对数次的运算已经足够用于解密运算, 因此我们可以基于Circular Security假设, 使用Bootstrapping技术实现全同态.&lt;/p&gt;
+&lt;h1 id=&#34;文中提到的论文&#34;&gt;文中提到的论文&lt;/h1&gt;
+&lt;p&gt;[GSW13] Craig Gentry, Amit Sahai and Brent Waters. Homomorphic Encryption from Learning with Errors: Conceptually-Simpler, Asymptotically-Faster, Atribute-Based. &lt;em&gt;Annual Cryptology Conference&lt;/em&gt;. Springer, Berlin, Heidelberg, 2013.&lt;/p&gt;
+&lt;p&gt;[MP12] Daniele Micciancio and Chris Peikert. Trapdoors for lattices: Simpler, tighter, faster, smaller. In &lt;em&gt;EUROCRYPT&lt;/em&gt;, pages 700-718, 2012.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>独立文件夹标题123</title>
+        <link>https://lingerois.github.io/p/%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+        <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://lingerois.github.io/p/%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+        <description>&lt;img src="https://lingerois.github.io/p/%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9/sunset.jpg" alt="Featured image of post 独立文件夹标题123" /&gt;&lt;h2 id=&#34;hhh&#34;&gt;hhh&lt;/h2&gt;
+&lt;p&gt;Test&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>标题</title>
+        <link>https://lingerois.github.io/p/smart-watch/</link>
+        <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://lingerois.github.io/p/smart-watch/</guid>
+        <description>&lt;img src="https://lingerois.github.io/p/smart-watch/android.png" alt="Featured image of post 标题" /&gt;&lt;h2 id=&#34;结论&#34;&gt;结论&lt;/h2&gt;
+&lt;p&gt;Test&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Test</title>
+        <link>https://lingerois.github.io/p/test/</link>
+        <pubDate>Wed, 19 May 2021 11:19:17 +0800</pubDate>
+        
+        <guid>https://lingerois.github.io/p/test/</guid>
+        <description>&lt;h1 id=&#34;hello&#34;&gt;hello&lt;/h1&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
