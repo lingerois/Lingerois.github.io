@@ -6,14 +6,20 @@
     <description>Recent content in 密码学 on Lingerois</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://flyzebraV.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Aug 2019 21:29:13 +0000</lastBuildDate><atom:link href="https://flyzebraV.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>独立文件夹标题123</title>
-      <link>https://flyzebraV.github.io/p/%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
-      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      <title>同态加密1 GSW13方案</title>
+      <link>https://flyzebraV.github.io/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%861-gsw13%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Sun, 11 Aug 2019 21:29:13 +0000</pubDate>
       
-      <guid>https://flyzebraV.github.io/p/%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
-      <description>hhh Test</description>
+      <guid>https://flyzebraV.github.io/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%861-gsw13%E6%96%B9%E6%A1%88/</guid>
+      <description>GSW方案是由Craig Gentry1, Amit Sahai与Brent Waters于2013年提出的方案, 发表于论文[GSW13]中.
+GSW方案确实如论文标题一样, 概念清晰明了, 其Intuition简单到一个刚学完线性代数的大一新生也能理解. GSW还支持基于属性的加密, 但本文中我们将不介绍这一部分内容.
+当然, 完全理解GSW方案仍然需要用到一些比较进阶的知识, 如LWE问题的困难性等. 我们在本文中不会对这些知识做过多的介绍, 这些知识将在今后其他的博文中介绍.
+Basic Intuition 密文的基本格式 最基本的GSW同态加密方案的私钥($sk$)是一个向量$\mathbf v\in\mathbb Z_q^N$, 而所有的明文$\mu_i\in{0,1}$都被加密一个矩阵$C_i\in\mathbb Z_q^{N\times N}$中, 其中$C_i$是以$v$为近似特征向量并以$\mu_i$为近似特征值的矩阵, 即我们要求 $$ C_i\mathbf v\approx \mu_i \mathbf v $$ 这里可以看出， 我们只需要挑选$\mathbf v$中非$0$的位(最好是选较大的位), 如第$j$位$v_j$, 并比较$v_j$与$\mu_iv_j$的值就可以解出$\mu_i$的值.
+一个需要注意的地方就是, 虽然$\mu_i$取自${0,1}$, 但被视作是$\mathbb Z_q$中的元素, 因此具体的运算也是按照$\mathbb Z_q$的运算方式来进行.
+我们也可以将噪声(error)显式地写出来, 记作 $$ C_i\mathbf v=\mu_i\mathbf v+\mathbf e $$ 其中$\mathbf e$是非常小的向量. 因此可以看出, 如果$\mathbf e$确实是一个较小的噪声, 那么我们就可以正确地解出$\mu_i$.
+乘法同态性质 现在我们来验证该加密方案具有同态性质. 现在假设有两个密文$C_1, C_2$, 对对应的明文分别是$\mu_1,\mu_2$, 即 $$ \begin{aligned} C_1\mathbf v=\mu_1\mathbf v+\mathbf e_1 \newline C_2\mathbf v=\mu_2\mathbf v+\mathbf e_2 \end{aligned} $$ 其中$\mathbf e_1,\mathbf e_2$均为较小的噪声, 那么令$C^\times=C_1\cdot C_2$, 我们检验$C^\times$的解密结果 $$ \begin{aligned} C^\times\mathbf v &amp;amp;=(C_1\cdot C_2)\mathbf v \newline &amp;amp;=C_1(\mu_2\mathbf v+\mathbf e_2) \newline &amp;amp;=\mu_2(\mu_1\mathbf v+\mathbf e_1)+C_1\mathbf e_2\newline &amp;amp;= \mu_1\mu_2\mathbf v+\mu_2\mathbf e_1+C_1\mathbf e_2 \end{aligned} $$ 这里可以看出, $\mu_2\mathbf e_1$确实是一个比较小的噪声项, 但是要让$C^\times$的噪声比较小, 那么就需要让$C_1$是一个较小的矩阵(即其最大的元素较小), 我们稍后会解释如何做到这一点.</description>
     </item>
     
   </channel>
