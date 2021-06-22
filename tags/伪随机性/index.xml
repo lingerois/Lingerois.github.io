@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>伪随机性 on Lingerois</title>
+    <link>https://lingerois.com/tags/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A7/</link>
+    <description>Recent content in 伪随机性 on Lingerois</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language><atom:link href="https://lingerois.com/tags/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>伪随机性(1) 随机算法 谱图论</title>
+      <link>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/</guid>
+      <description>本章主要通过一些随机化的算法介绍了两个工具:
+ 马尔可夫不等式(Markov Inequality)和切尔诺夫界(Chernoff Bound) 用代数的方法研究图论, 即随机游走  同时涉及以下复杂性类: $$ \mathbf P, \mathbf{RP}, \mathbf{coRP}, \mathbf {ZPP},\mathbf{BPP},\mathbf{PP},\mathbf{NP}, \mathbf L,\mathbf{RL},\mathbf{coRL},\mathbf{BPL},\mathbf{prP},\mathbf{prBPP},\mathbf{MA} $$
+多项式相等性测试问题 Polynomial Identity Testing问题, 要求检查两个给定的多项式$f(x_1,\cdots,x_n)$和$g(x_1,\cdots,x_n)$是否相等. 其中, 多项式可以是整环, 有限域, $\mathbb Z$上的. 一般来说多项式测试中的多项式是指多项式形式.
+但是, 如果多项式是按照Oracle给出的, 那么应当认为测试的是指多项式函数的相等性.
+有限域上的多项式的相等性测试非常简单. 给定两个多项式$f,g$, 只需要构造$h=f-g$, 然后再测试这个多项式是否是零多项式即可. 即把多项式相等性测试归约到零多项式测试问题(即判定给定的多项式是否为0多项式)上去.
+测试的方法是, 不断地取随机值带入多项式求值. 根据习题2.1, 如果多项式是非零多项式, 那么赋值的结果以一定的概率不为零. 如果得到的结果是非零的, 那么显然, $h$不是零多项式, 也就有$f\neq g$. 如果求出的值是$0$, 那么$f=g$可能是成立的, 我们还需要带入检验其他值来提高输出正确答案的概率.
+Markov不等式  引理 Markov不等式
+令$X$是一个飞负的随机变量, 则对于任意$\alpha&amp;gt;0$, 有 $$ \Pr[X\geq \alpha]\leq \frac{\operatorname E[X]}{\alpha} $$
+ Markov不等式的证明非常简单, 也显得非常粗略, 但是它对于推出Chernoff界已经足够了.
+Chernoff界 书中介绍的是广义的Chernoff界, 证明同伯努利分布的证明略有不同.</description>
+    </item>
+    
+  </channel>
+</rss>
