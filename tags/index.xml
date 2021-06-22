@@ -2,44 +2,107 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Lingerois</title>
-    <link>https://flyzebraV.github.io/tags/</link>
+    <link>https://lingerois.com/tags/</link>
     <description>Recent content in Tags on Lingerois</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 11 Aug 2019 21:29:13 +0000</lastBuildDate><atom:link href="https://flyzebraV.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jul 2021 14:03:36 +0000</lastBuildDate><atom:link href="https://lingerois.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>同态加密</title>
-      <link>https://flyzebraV.github.io/tags/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86/</link>
-      <pubDate>Sun, 11 Aug 2019 21:29:13 +0000</pubDate>
+      <title>后量子密码学</title>
+      <link>https://lingerois.com/tags/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6/</link>
+      <pubDate>Thu, 08 Jul 2021 14:03:36 +0000</pubDate>
       
-      <guid>https://flyzebraV.github.io/tags/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86/</guid>
+      <guid>https://lingerois.com/tags/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>密码学</title>
-      <link>https://flyzebraV.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</link>
-      <pubDate>Sun, 11 Aug 2019 21:29:13 +0000</pubDate>
+      <title>格</title>
+      <link>https://lingerois.com/tags/%E6%A0%BC/</link>
+      <pubDate>Thu, 08 Jul 2021 14:03:36 +0000</pubDate>
       
-      <guid>https://flyzebraV.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</guid>
+      <guid>https://lingerois.com/tags/%E6%A0%BC/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>计算复杂性</title>
-      <link>https://flyzebraV.github.io/tags/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A7/</link>
-      <pubDate>Tue, 05 Mar 2019 12:06:45 +0000</pubDate>
+      <title>图论</title>
+      <link>https://lingerois.com/tags/%E5%9B%BE%E8%AE%BA/</link>
+      <pubDate>Tue, 06 Jul 2021 17:01:01 +0000</pubDate>
       
-      <guid>https://flyzebraV.github.io/tags/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A7/</guid>
+      <guid>https://lingerois.com/tags/%E5%9B%BE%E8%AE%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>https://lingerois.com/tags/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 06 Jul 2021 17:01:01 +0000</pubDate>
+      
+      <guid>https://lingerois.com/tags/%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>计算理论</title>
-      <link>https://flyzebraV.github.io/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</link>
-      <pubDate>Tue, 05 Mar 2019 12:06:45 +0000</pubDate>
+      <link>https://lingerois.com/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</link>
+      <pubDate>Tue, 06 Jul 2021 17:01:01 +0000</pubDate>
       
-      <guid>https://flyzebraV.github.io/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</guid>
+      <guid>https://lingerois.com/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>代数</title>
+      <link>https://lingerois.com/tags/%E4%BB%A3%E6%95%B0/</link>
+      <pubDate>Sun, 21 Mar 2021 14:31:42 +0000</pubDate>
+      
+      <guid>https://lingerois.com/tags/%E4%BB%A3%E6%95%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数学</title>
+      <link>https://lingerois.com/tags/%E6%95%B0%E5%AD%A6/</link>
+      <pubDate>Sun, 21 Mar 2021 14:31:42 +0000</pubDate>
+      
+      <guid>https://lingerois.com/tags/%E6%95%B0%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>计算复杂性</title>
+      <link>https://lingerois.com/tags/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A7/</link>
+      <pubDate>Tue, 20 Aug 2019 23:16:19 +0000</pubDate>
+      
+      <guid>https://lingerois.com/tags/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>同态加密</title>
+      <link>https://lingerois.com/tags/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86/</link>
+      <pubDate>Sun, 18 Aug 2019 15:40:01 +0000</pubDate>
+      
+      <guid>https://lingerois.com/tags/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>密码学</title>
+      <link>https://lingerois.com/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</link>
+      <pubDate>Sun, 18 Aug 2019 15:40:01 +0000</pubDate>
+      
+      <guid>https://lingerois.com/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>概率论</title>
+      <link>https://lingerois.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/</link>
+      <pubDate>Thu, 21 Mar 2019 23:45:57 +0000</pubDate>
+      
+      <guid>https://lingerois.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/</guid>
       <description></description>
     </item>
     

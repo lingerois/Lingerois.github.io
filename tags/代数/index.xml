@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>代数 on Lingerois</title>
+    <link>https://lingerois.com/tags/%E4%BB%A3%E6%95%B0/</link>
+    <description>Recent content in 代数 on Lingerois</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 21 Mar 2021 14:31:42 +0000</lastBuildDate><atom:link href="https://lingerois.com/tags/%E4%BB%A3%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Field Theory (1) Field, Field Extension</title>
+      <link>https://lingerois.com/p/field-theory-1-field-field-extension/</link>
+      <pubDate>Sun, 21 Mar 2021 14:31:42 +0000</pubDate>
+      
+      <guid>https://lingerois.com/p/field-theory-1-field-field-extension/</guid>
+      <description>Warning
+This is not a overall introduction to the field theory. Please resort to a textbook if you are a beginner in field theory.
+ Field are those commutative rings s.t. every element except $0$ has an invers element. We start with the simplest fields.
+ Prime Field
+For any field $k$, define its prime field to be the intersection of all subfields
+ For any field, its prime field must be $\mathbb Q$ or $\mathbb F_p$ for some prime $p$.</description>
+    </item>
+    
+  </channel>
+</rss>
