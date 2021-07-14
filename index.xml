@@ -13,6 +13,8 @@
         
         <guid>https://lingerois.com/p/%E5%9F%BA%E4%BA%8E%E6%A0%BC%E7%9A%84%E5%AF%86%E7%A0%81-%E5%9F%BA%E7%9F%B3%E7%AF%871-%E5%9F%BA%E7%A1%80/</guid>
         <description>&lt;img src="https://lingerois.com/p/%E5%9F%BA%E4%BA%8E%E6%A0%BC%E7%9A%84%E5%AF%86%E7%A0%81-%E5%9F%BA%E7%9F%B3%E7%AF%871-%E5%9F%BA%E7%A1%80/lattice.jpg" alt="Featured image of post 基于格的密码 基石篇(1) 基础" /&gt;&lt;p&gt;注意, 本系列是Foundation of Lattice-Based Cryptography, 而不是Basic Lattice-Based Cryptography, 这意味着我们更多是关注基本定义, 困难问题, 算法, 而不是关注具体的密码方案. 此外, 基石对应foundation, 基础对应basics.&lt;/p&gt;
+&lt;p&gt;在文章中, 我们可能会用到&lt;a class=&#34;link&#34; href=&#34;https://www.sagemath.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SageMath&lt;/a&gt;作为计算工具以展示例子, 这是一个语法类似于Python的功能强大的开源计算软件.&lt;/p&gt;
 &lt;h1 id=&#34;基本定义&#34;&gt;基本定义&lt;/h1&gt;
 &lt;p&gt;格实际上就是$\mathbb R^n$空间中周期出现的点阵, 它是$\mathbb R^n$的一个子集, 这里, &amp;ldquo;周期&amp;quot;是一个非常不精确的说法, 因此精确来说格可以定义如下.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1271,9 +1273,9 @@ In other situations, these kind of mark can represent an anonymous random variab
 &lt;p&gt;The existence of cryptography is based on $\mathbf P\neq \mathbf{NP}$. But $\mathbf P\neq \mathbf{NP}$ is not enough, cryptography asks for stronger precondition, that is the existence of (Strong) &lt;strong&gt;One-way Function&lt;/strong&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Strong One-way Function&lt;/strong&gt; (OWF)&lt;/p&gt;
-&lt;p&gt;A function $f:{0,1}^\ast\to {0,1}^\ast$ is a strong one-way function if it is&lt;/p&gt;
+&lt;p&gt;A function $f:\lbrace 0,1\rbrace ^\ast\to \lbrace 0,1\rbrace ^\ast$ is a strong one-way function if it is&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Easy to compute&lt;/strong&gt;: There is a deterministic polynomial-time algorithm $\mathsf{EvalF}$ such that for all $n$ and all $x\in{0,1}^n$ we have $\mathsf{EvalF(x)} = f(x)$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Easy to compute&lt;/strong&gt;: There is a deterministic polynomial-time algorithm $\mathsf{EvalF}$ such that for all $n$ and all $x\in\lbrace 0,1\rbrace ^n$ we have $\mathsf{EvalF(x)} = f(x)$.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Hard to invert&lt;/strong&gt;: There is no probabilitistic polynomial-time algorithm could invert the function with probability better than $\mathsf{negl(n)}$.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
@@ -1292,7 +1294,7 @@ for any $c&amp;gt;0$.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;If strong one-way function exists, then $\mathbf{P}\neq \mathbf{NP}$.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Proof&lt;/strong&gt;: Suppose $\mathbf{P}=\mathbf{NP}$ and there exists an one-way function $f:{0,1}^\ast\to {0,1}^\ast$. Then decide
+&lt;p&gt;&lt;strong&gt;Proof&lt;/strong&gt;: Suppose $\mathbf{P}=\mathbf{NP}$ and there exists an one-way function $f:\lbrace 0,1\rbrace ^\ast\to \lbrace 0,1\rbrace ^\ast$. Then decide
 $$
 L=\lbrace\langle x^\ast,y\rangle| \exists x:x^\ast\sqsubset x \text{and} f(x)=y\rbrace
 $$
@@ -1302,10 +1304,10 @@ $L$ is the collection of tuples like $\langle x^\ast, y\rangle$ that $x^\ast$ is
 &lt;h2 id=&#34;weak-one-way-function&#34;&gt;Weak One-Way Function&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Weak One-Way Function&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;A function $f:{0,1}^\ast\to {0,1}^\ast$ is a one-way function if it is&lt;/p&gt;
+&lt;p&gt;A function $f:\lbrace 0,1\rbrace ^\ast\to \lbrace 0,1\rbrace ^\ast$ is a one-way function if it is&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Easy to compute&lt;/strong&gt;: There is a deterministic polynomial-time algorithm $\mathsf{EvalF}$ such that for all $n$ and all $x\in{0,1}^n$ we have $\mathsf{EvalF(x)} = f(x)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Easy to compute&lt;/strong&gt;: There is a deterministic polynomial-time algorithm $\mathsf{EvalF}$ such that for all $n$ and all $x\in\lbrace 0,1\rbrace ^n$ we have $\mathsf{EvalF(x)} = f(x)$.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Slightly Hard to invert&lt;/strong&gt;: There exists a polynomial $p(\cdot)$ such that for every PPT algorithm $\mathcal A$ and all sufficiently large n&amp;rsquo;s,
@@ -1320,7 +1322,7 @@ $$&lt;/p&gt;
 &lt;p&gt;In another view, weak one-way function seems not too weak. The failure probability of weak one-way function has essential difference from such of a PPT algorithm $\mathcal A$ solves some $L\in\mathbf{BPP}$. In the later, since every $x\in L$ can be decide by $\mathcal A$ with large probability, we can decrease the failure probability to negligible by repeating $\mathcal A$ with different coin tosses. But for the former, even repeating for polynomial times can&amp;rsquo;t help with decreasing the gap. It says these there are cases that be solved by any PPT algorithm.&lt;/p&gt;
 &lt;h2 id=&#34;one-way-function-defined-for-some-lengths&#34;&gt;One-Way Function Defined for Some Lengths.&lt;/h2&gt;
 &lt;p&gt;We could define one-way function for some lengths. Let $I\in \mathbb N$, then $I$ contains some natural numbers. We define the successor of $n$ in $I$ the minimal number in $I$ that is larger than $I$, denoted by $s_I(n)$.&lt;/p&gt;
-&lt;p&gt;E.g. Let $I= {2,3,7,9,10,12,14,\cdots}$, then $s_I(8)=9$.&lt;/p&gt;
+&lt;p&gt;E.g. Let $I= \lbrace 2,3,7,9,10,12,14,\cdots\rbrace $, then $s_I(8)=9$.&lt;/p&gt;
 &lt;p&gt;$I$ is called polynomial-time-enumerable if there exists a $poly$-time turing machine that on input $n$ output $1^{S_I(n)}$.&lt;/p&gt;
 &lt;p&gt;To modify the definition of strong/weak one way function, change &amp;ldquo;every $n$&amp;rdquo; to &amp;ldquo;every $n\in I$&amp;rdquo; to get the definiton of strong/weak one-way functions for some lengths.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Fact&lt;/strong&gt; One-Way function for polynomial-time-enumerable $I$ can be easily transformed to the original one-way function.&lt;/p&gt;
@@ -1359,13 +1361,13 @@ We&amp;rsquo;ve done. The one-wayness of $g^\prime$ can be also proved by reduct
 &lt;p&gt;Non-uniformly one-way function is a stronger version of one-way function, it is those one-way functions has non-uniform one-wayness, which means it can&amp;rsquo;t be revert efficiently by a non-uniform algorithm. Notice that non-uniform algorithms are deterministic if they are represented by circuit families.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Non-uniformly One-Way Function&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;A function $f:{0,1}^\ast\to {0,1}^\ast$ is a strong one-way function if it is&lt;/p&gt;
+&lt;p&gt;A function $f:\lbrace 0,1\rbrace ^\ast\to \lbrace 0,1\rbrace ^\ast$ is a strong one-way function if it is&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Easy to compute&lt;/strong&gt;: There is a deterministic polynomial-time algorithm $\mathsf{EvalF}$ such that for all $n$ and all $x\in{0,1}^n$ we have $\mathsf{EvalF(x)} = f(x)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Easy to compute&lt;/strong&gt;: There is a deterministic polynomial-time algorithm $\mathsf{EvalF}$ such that for all $n$ and all $x\in\lbrace 0,1\rbrace ^n$ we have $\mathsf{EvalF(x)} = f(x)$.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Hard to invert&lt;/strong&gt;: For all $poly$-size circuit family ${C_n}$  , polynomial $p(\cdot)$ and efficient large $n$, it holds that
+&lt;p&gt;&lt;strong&gt;Hard to invert&lt;/strong&gt;: For all $poly$-size circuit family $\lbrace C_n\rbrace $  , polynomial $p(\cdot)$ and efficient large $n$, it holds that
 $$
 \Pr[C_n(f(x))\in f^{-1}(f(x))]&amp;lt;\frac 1 {p(n)}
 $$&lt;/p&gt;
@@ -1523,9 +1525,9 @@ where $\boldsymbol M$ is a turing machine as $\llcorner\boldsymbol M\lrcorner$ i
 &lt;p&gt;If we put some of one-way functions together, we get a collection of one-way funtions. This is meaningless unless we have a good way to compute them by a single efficient evaluation function. If such a function do exists, with some extra attributes, the collection would be quite useful. Based on this main idea, we define one-way function family.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;One-Way Function Family&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;A collection of functions $\lbrace f_i:D_i\to{0,1}^\ast | i\in I\rbrace$ is called a strong (resp., weakly) one-way function family if there exists three PPT algorithms $\mathcal G,\mathcal S,\mathcal E$ satisfy&lt;/p&gt;
+&lt;p&gt;A collection of functions $\lbrace f_i:D_i\to\lbrace 0,1\rbrace ^\ast | i\in I\rbrace$ is called a strong (resp., weakly) one-way function family if there exists three PPT algorithms $\mathcal G,\mathcal S,\mathcal E$ satisfy&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;The generation algorithm $\mathcal G $: given the input $1^n$, output a random variable $i$ from $I_n=I\cap {0,1}^n$.&lt;/li&gt;
+&lt;li&gt;The generation algorithm $\mathcal G $: given the input $1^n$, output a random variable $i$ from $I_n=I\cap \lbrace 0,1\rbrace ^n$.&lt;/li&gt;
 &lt;li&gt;The sampling algorithm  $\mathcal S$: given the input $1^n$ and $I_n$, output a random value $x$ from $D_i$.&lt;/li&gt;
 &lt;li&gt;Then evaluation algorithm $\mathcal E$: given the input $1^n, I_n, x$, output $f_i(x)$ correctly.&lt;/li&gt;
 &lt;/ol&gt;
@@ -1541,7 +1543,7 @@ $$&lt;/p&gt;
 &lt;p&gt;The definition is straight forward, but there are still somewhere to pay attention to.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;In order to efficiently sample from $I\cap {0,1}^n$ for all efficient large $n$, the size of $I$ has to be noticable, which means $|I\cap {0,1}^n|\geq 2^n/\text{poly}(n)$. The generation algorithm $\mathcal G$ don&amp;rsquo;t have to sample $I_n$ uniformly at random on $I\cap {0,1}^n$. Likewise, the output of sample algorithm $\mathcal S$ on input $i$ do not necessarily distributed uniformly over $D_i$.&lt;/p&gt;
+&lt;p&gt;In order to efficiently sample from $I\cap \lbrace 0,1\rbrace ^n$ for all efficient large $n$, the size of $I$ has to be noticable, which means $|I\cap \lbrace 0,1\rbrace ^n|\geq 2^n/\text{poly}(n)$. The generation algorithm $\mathcal G$ don&amp;rsquo;t have to sample $I_n$ uniformly at random on $I\cap \lbrace 0,1\rbrace ^n$. Likewise, the output of sample algorithm $\mathcal S$ on input $i$ do not necessarily distributed uniformly over $D_i$.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;The three algorithms $\mathcal G,\mathcal S,\mathcal E$ are allowed to fail with negligible probability. This doesn&amp;rsquo;t affects its cryptographic usage.&lt;/p&gt;
@@ -1556,12 +1558,12 @@ $$&lt;/p&gt;
 &lt;p&gt;For OWP family (One-Way Permutation family) with trapdoors, we are going to use the most convenient definition for cryptography.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Trapdoor Permutation Family&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Let $I\subseteq {0,1}^n$ and define $I_n=I\cap{0,1}^n$. A trapdoor permutation famility with indices in $I$ is a set of functions $\lbrace f_i:D_i\to D_i|i\in I \rbrace$ such that each $f_i$ is a permutation on the corresponding $D_i$. Such a collection is called a &lt;strong&gt;trapdoor permutation&lt;/strong&gt; if there exist four PPT algorithms $\mathcal G, \mathcal S, \mathcal E, \mathcal E^{-1}$ such that the following five conditions hold:&lt;/p&gt;
+&lt;p&gt;Let $I\subseteq \lbrace 0,1\rbrace ^n$ and define $I_n=I\cap\lbrace 0,1\rbrace ^n$. A trapdoor permutation famility with indices in $I$ is a set of functions $\lbrace f_i:D_i\to D_i|i\in I \rbrace$ such that each $f_i$ is a permutation on the corresponding $D_i$. Such a collection is called a &lt;strong&gt;trapdoor permutation&lt;/strong&gt; if there exist four PPT algorithms $\mathcal G, \mathcal S, \mathcal E, \mathcal E^{-1}$ such that the following five conditions hold:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Index and trapdoor generation $\mathcal G$:
 $$
-\Pr[\mathcal G(1^n)\in I_n\times {0,1}^\ast]&amp;gt;1-2^{-n}
+\Pr[\mathcal G(1^n)\in I_n\times \lbrace 0,1\rbrace ^\ast]&amp;gt;1-2^{-n}
 $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1593,16 +1595,16 @@ $$&lt;/p&gt;
 &lt;p&gt;$b(x)\oplus m$. Moreover, such $h$ has to be efficiently computable, otherwise the encryption can&amp;rsquo;t be done efficiently. Due to the unpredicability of $h(x)$, the information of $b$ would be hide well. If all above $b$ holds, we call it a hard-core bit.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Hard-Core Predicate&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;A PPT computable predicate $b:{0,1}^\ast\to{0,1}$ is called a &lt;strong&gt;hard-core&lt;/strong&gt; of a function $f$ if for every PPT algorithm $\mathcal A$, every polynomial $p(\cdot)$ and all sufficient large $n$, it holds that
+&lt;p&gt;A PPT computable predicate $b:\lbrace 0,1\rbrace ^\ast\to\lbrace 0,1\rbrace $ is called a &lt;strong&gt;hard-core&lt;/strong&gt; of a function $f$ if for every PPT algorithm $\mathcal A$, every polynomial $p(\cdot)$ and all sufficient large $n$, it holds that
 $$
 \Pr[\mathcal A(f(U_n))=b(U_n)]&amp;lt;\frac{1}{2}+\frac 1 {p(n)}
 $$&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Don&amp;rsquo;t be confused with the word &amp;ldquo;predicate&amp;rdquo;; it just means a function with range ${0,1}$. It is obvious that a function $f:\lbrace 0,1\rbrace^n\to \lbrace 0,1\rbrace^n$ has a hard-core bit only if it is one-way.&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t be confused with the word &amp;ldquo;predicate&amp;rdquo;; it just means a function with range $\lbrace 0,1\rbrace $. It is obvious that a function $f:\lbrace 0,1\rbrace^n\to \lbrace 0,1\rbrace^n$ has a hard-core bit only if it is one-way.&lt;/p&gt;
 &lt;p&gt;We can also define hard-core for a one-way function family.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Hard-Core Predicate for One-Way Function Family&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;For one-way function family $(\mathcal G,\mathcal S ,\mathcal E)$, a $poly$-time alogrithm $\mathcal B:{0,1}^\ast\times {0,1}^\ast\to {0,1}$ is called a hard-core of the family if for every PPT algorithm $\mathcal A$, every polynomial $p(\cdot)$, and all sufficiently large n&amp;rsquo;s,
+&lt;p&gt;For one-way function family $(\mathcal G,\mathcal S ,\mathcal E)$, a $poly$-time alogrithm $\mathcal B:\lbrace 0,1\rbrace ^\ast\times \lbrace 0,1\rbrace ^\ast\to \lbrace 0,1\rbrace $ is called a hard-core of the family if for every PPT algorithm $\mathcal A$, every polynomial $p(\cdot)$, and all sufficiently large n&amp;rsquo;s,
 $$
 \Pr\limits_{i\leftarrow \mathcal G(1^n); x\leftarrow \mathcal S(1^n,i)}[\mathcal A(i,f_i(x))=\mathcal B(i,x)]&amp;lt;\frac 12+\frac 1{p(n)}
 $$&lt;/p&gt;
@@ -1613,48 +1615,48 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Goldreich-Levin Theorem&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Let $f$ be an arbitrary strong one-way function, and let $g$ be defined as $g(x,r)=(f(x),r)$, where $|x|=|r|$. Then predicate $b=\bigoplus_{i=1}^{|x|}x\cdot r$ is a hard-core of function $g$.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Well the proof of this theorem is quite long, but is basic idea is simple, by voting. Assume that there is some alogrithm $\mathcal A$ that predict $b$ with non-negligible probability, we are going to construct a algorithm $\mathcal B$ whom invokes $\mathcal A$ polynomial times and recover $x\in f^{-1}(y)$ bit by bit. We are going to prove a weaker theorem first in order to build up the intuition of this theorem.&lt;/p&gt;
+&lt;p&gt;Well the proof of this theorem is quite long, but is basic idea is simple, by voting. Assume that there is some alogrithm $\mathcal B$ that predict $b$ with non-negligible probability, we are going to construct an algorithm $\mathcal A$ whom invokes $\mathcal B$ for polynomial times and recover $x\in f^{-1}(y)$ bit by bit. We are going to prove a weaker theorem first in order to build up the intuition of this theorem.&lt;/p&gt;
 &lt;h3 id=&#34;weaker-version-the-constant-successful-prdiction-probability--076&#34;&gt;&lt;strong&gt;Weaker Version: The constant successful prdiction probability $&amp;gt; 0.76$&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;We are going to show how to recover one bit by invoking the algorithm hard-core predicting algorithm $\mathcal A$ that satisfy
+&lt;p&gt;We are going to show how to recover one bit by invoking the algorithm hard-core predicting algorithm $\mathcal B$ that satisfy
 $$
-\Pr[\mathcal A(f(x),r)=b(x,r)]&amp;gt;0.75+\frac{1}{2p(n)}
+\Pr[\mathcal B(f(x),r)=b(x,r)]&amp;gt;0.75+\frac{1}{2p(n)}
 $$
 where $p(n)$ is a polynomial.&lt;/p&gt;
-&lt;p&gt;Let $e_i$ be the $n$-dimensional binary vector with $1$ in the $i$th component and $0$ in the others. Since $r$ is uniformly random, $r\oplus e_i$ is uniformly random.  We can use to $\mathcal A(f(x),r \oplus e_i)$ to predict $b(x,r\oplus e_i)$, and get the right result with probability $&amp;gt; 0.75+\frac 1{2p(n)}$.&lt;/p&gt;
-&lt;p&gt;If $\mathcal A$ succesfully predicates both $b(x,r)$ and $b(x,r\oplus e+i)$, then
+&lt;p&gt;Let $e_i$ be the $n$-dimensional binary vector with $1$ in the $i$th component and $0$ in the others. Since $r$ is uniformly random, $r\oplus e_i$ is uniformly random.  We can use to $\mathcal B(f(x),r \oplus e_i)$ to predict $b(x,r\oplus e_i)$, and get the right result with probability $&amp;gt; 0.75+\frac 1{2p(n)}$.&lt;/p&gt;
+&lt;p&gt;If $\mathcal B$ succesfully predicates both $b(x,r)$ and $b(x,r\oplus e+i)$, then
 $$
 \begin{align}
-\mathcal A(f(x),r)\oplus \mathcal A(f(x),r\oplus e_i) &amp;amp;= b(x,r)\oplus b(x,r\oplus e_i) \newline
+\mathcal B(f(x),r)\oplus \mathcal B(f(x),r\oplus e_i) &amp;amp;= b(x,r)\oplus b(x,r\oplus e_i) \newline
 &amp;amp;= b(x,e_i) \newline
 &amp;amp; = x_i
 \end{align}
 $$
-Then we can constuct an algorithm $\mathcal B(f(x),r)=\mathcal A(f(x),r)\oplus \mathcal A(f(x),r\oplus e_i)$ it holds that
+Then we can constuct an algorithm $\mathcal A(f(x),r)=\mathcal B(f(x),r)\oplus \mathcal B(f(x),r\oplus e_i)$ it holds that
 $$
-\Pr[\mathcal B(f(x),r)=x_i]&amp;gt;\frac 1 2 +\frac 1 {p(n)}
+\Pr[\mathcal A(f(x),r)=x_i]&amp;gt;\frac 1 2 +\frac 1 {p(n)}
 $$
 By Chernoff bound, we can predicate $x_i$ with overwhelming probability by repeating for polynomial times.&lt;/p&gt;
 &lt;h3 id=&#34;proof-of-goldreich-levin-theorem&#34;&gt;Proof of &lt;strong&gt;Goldreich-Levin Theorem&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;For $\mathcal A$ with success probability less than $0.75$, the previous method cannot work.&lt;/p&gt;
+&lt;p&gt;For $\mathcal B$ with success probability less than $0.75$, the previous method cannot work.&lt;/p&gt;
 &lt;p&gt;I think Goldreich has introduced his intuition finely, so I&amp;rsquo;m going to quote the contents in his book here, with some slightly modify to the symbols.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;What is required is &lt;strong&gt;an alternative way&lt;/strong&gt; of suing the algorithm $\mathcal B$, a way that does not double the original error probability of $\mathcal B$. They key idea is to generate the $r$&amp;rsquo;s in a way that requires applying algorithm $\mathcal B$ only once per each $r$ (and $i$), instead of twice. Specifically, we shall use algorithm $\mathcal B$ to obtain a &amp;ldquo;guess&amp;rdquo; for $b(x,r\oplus e_i)$ and obtain $b(x,r)$ in a different way. The good news is that the error probability is no longer doubled, since we use $\mathcal B$ get a &amp;ldquo;quess&amp;rdquo; of $b(x,r\oplus e_i)$. The bad news is that we still need to know $b(x,r)$ for only one $r$ (or logarithmacally in |x| many r&amp;rsquo;s), but the problem is that we nned to know (and hence guess) the values of $b(x,r)$ for polynomially many r&amp;rsquo;s. An obvious way of guessing these $b(x,r)$&amp;rsquo;s yields an exponentially vanishing success probability. Instead we generate these polynomially many r&amp;rsquo;s such that, on one hand, they are &amp;ldquo;sufficiently random,&amp;rdquo; whereas, on the other hand, we can guess all the $b(x,r)$&amp;rsquo;s with noticable success probability. Specifically, generating the r&amp;rsquo;s in a particular &lt;strong&gt;pairwise-independent&lt;/strong&gt; manner will satisfy both (seemingly contradictory) reqirements.&lt;/p&gt;
+&lt;p&gt;What is required is &lt;strong&gt;an alternative way&lt;/strong&gt; of using the algorithm $\mathcal B$, a way that does not double the original error probability of $\mathcal B$. They key idea is to generate the $r$&amp;rsquo;s in a way that requires applying algorithm $\mathcal B$ only once per each $r$ (and $i$), instead of twice. Specifically, we shall use algorithm $\mathcal B$ to obtain a &amp;ldquo;guess&amp;rdquo; for $b(x,r\oplus e_i)$ and obtain $b(x,r)$ in a different way. The good news is that the error probability is no longer doubled, since we use $\mathcal B$ get a &amp;ldquo;quess&amp;rdquo; of $b(x,r\oplus e_i)$. The bad news is that we still need to know $b(x,r)$ for only one $r$ (or logarithmacally in $|x|$ many $r$&amp;rsquo;s), but the problem is that we need to know (and hence guess) the values of $b(x,r)$ for polynomially many r&amp;rsquo;s. An obvious way of guessing these $b(x,r)$&amp;rsquo;s yields an exponentially vanishing success probability. Instead we generate these polynomially many $r$&amp;rsquo;s such that, on one hand, they are &amp;ldquo;sufficiently random,&amp;rdquo; whereas, on the other hand, we can guess all the $b(x,r)$&amp;rsquo;s with noticable success probability. Specifically, generating the $r$&amp;rsquo;s in a particular &lt;strong&gt;pairwise-independent&lt;/strong&gt; manner will satisfy both (seemingly contradictory) reqirements.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Back to the proof with some explaination&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Suppose there is an algorithm $\mathcal A$ holds that
+&lt;p&gt;Suppose there is an algorithm $\mathcal B$ holds that
 $$
-\Pr\limits_{x\leftarrow U_n;;r\leftarrow U_n}[\mathcal A(f(x),r)=b(x,r)]&amp;gt;\frac12+\frac1{p(n)}
+\Pr\limits_{x\leftarrow U_n;;r\leftarrow U_n}[\mathcal B(f(x),r)=b(x,r)]&amp;gt;\frac12+\frac1{p(n)}
 $$
 where $p(\cdot)$ is a polynomial and $|x|=n$.&lt;/p&gt;
-&lt;p&gt;We define a &amp;ldquo;good&amp;rdquo; subset of ${0,1}^n$. $S_n$ defines as 
+&lt;p&gt;We define a &amp;ldquo;good&amp;rdquo; subset of $\lbrace 0,1\rbrace ^n$. $S_n$ defines as 
 $$
-S_n=\lbrace S_n|\Pr\limits_{r\leftarrow U_n}[\mathcal A(f(x),r)=b(x,r)]&amp;gt;\frac 12+\frac1{2p(n)},x\in S_n \text{ is a constant}\rbrace
+S_n=\lbrace x:\Pr\limits_{r\leftarrow U_n}[\mathcal B(f(x),r)=b(x,r)]&amp;gt;\frac 12+\frac1{2p(n)}\rbrace
 $$
-We have proved that $|S_n|&amp;gt;\frac1{2p(n)}\cdot 2^n$.&lt;/p&gt;
+We have proved that $|S_n|&amp;gt;\frac1{2p(n)}\cdot 2^n$ in the article &lt;a class=&#34;link&#34; href=&#34;..%5caveraging-argument&#34; &gt;Averaging Argument&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We set $l\doteq \lceil \log_2(2n\cdot p(n)^2+1)\rfloor$. We construct a algorithm $\mathcal B$ proceeds as follows:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Sample $s^1,\cdots, s^l\in{0,1}^\ast $and $\sigma^1,\cdots, \sigma^l\in{0,1}$ uniformly at random.&lt;/p&gt;
+&lt;p&gt;Sample $s^1,\cdots, s^l\in\lbrace 0,1\rbrace ^\ast $and $\sigma^1,\cdots, \sigma^l\in\lbrace 0,1\rbrace $ uniformly at random.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;For every one-empty set $J\subseteq [l]$, computes $r^J=\bigoplus_{j\in J} s_j$ and a bit $\rho^J=\bigoplus_{j\in J}\sigma_j$.&lt;/p&gt;
@@ -1662,7 +1664,7 @@ We have proved that $|S_n|&amp;gt;\frac1{2p(n)}\cdot 2^n$.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;For every $i\in [n]$ and every non-empty $J \subseteq [l]$, computes
 $$
-z^J_i\leftarrow \rho^J\oplus G(y,r^J\oplus e_i)
+z^J_i\leftarrow \rho^J\oplus \mathcal B(y,r^J\oplus e_i)
 $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1672,37 +1674,48 @@ $$&lt;/p&gt;
 &lt;p&gt;Output $z=z_1\cdots z_n$.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;We have some comments. $\sigma_j$ is regard as the approximation of $b(x, s_j)$. It might sound wired since $\sigma_j$ is sampled uniformly at random. It sounds more like a &amp;ldquo;guess&amp;rdquo; and the probability of guessing right all can be computed:
+&lt;p&gt;We have some comments. $\sigma_j$ is regard as the approximation of $b(x, s_j)$. It might sound wired since $\sigma_j$ is sampled uniformly at random. It sounds more like a &amp;ldquo;bad guess&amp;rdquo; since it do predication with a coin. Thanks to the fact we only guess $O(\log n)$ bits, thus the probability of guessing all bits right can be bounded by
 $$
-\Pr[\forall i\in[l]:\sigma_i=b(x,s_i)]= 2^{-l}&amp;gt;\frac 1 {4n\cdot p(n)^2}
+\Pr[\forall i\in[l].\sigma_i=b(x,s_i)]= 2^{-l}&amp;gt;\frac 1 {4n\cdot p(n)^2}
 $$
-Whereas, the tricky technique here is we are not going use reductions to get the correct guess. Actually, we are going to use &amp;ldquo;democrative voting&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;The basic idea is that since we can guess the hard-core rightly, we are going to guess one-bit of $x_i$ from $f(x)$ with rightly with probability better than $1/2$ by using $\mathcal A(x,r^J)\oplus \mathcal(x,r^J\oplus e_i)$. Using Chernoff bound is an bad idea since it force us to double the error probability. Luckily, at last we have sampled pairwise-independent $s^J$&amp;rsquo;s and Chebyshev&amp;rsquo;s indequality should be helpful.&lt;/p&gt;
-&lt;p&gt;We define a new variable $\zeta^J_i$. $\zeta^J_i = 1$ if and only if we use $r^J$ guesses $x_i$ correctly, which means $b(x,r^J)\oplus \mathcal B(f(x),r^J\oplus e_i)=x_i$. Since $b(x,r^J)\oplus b(x,r^J\oplus e_i)$, if follows that $\zeta^J =1 $ if and only if $G(f(x),r^J\oplus e_i)=b(x,r^J\oplus e_i)$. For $x\in S_n$, We have 
+which is an inverse polynomial. However, polynomial time of guess is far from enough. We generate more guess by combine multiple $s$&amp;rsquo;s as we have done in step 2. Recall that we predicate $x_i$ by $\mathcal B(x,r^J)\oplus \mathcal B(x,r^J\oplus e_i)$, but his doubles the wrong probability of $\mathcal B$, which lead the method can&amp;rsquo;t be use for such $\mathcal B$ with wrong probability larger than $1/4$. To overcome this, we instead use $\rho^J$ as a guess of $\mathcal B(x,r^J)$.  For pairwise-independent $r^J$&amp;rsquo;s, Chebyshev&amp;rsquo;s inequality would be helpful. We review Chebyshev&amp;rsquo;s inequality as follows:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Theorem&lt;/p&gt;
+&lt;p&gt;If $X$ is a random variable with expectation $\mu$, then
+$$
+\operatorname{Pr}[|X-\mu| \geq \varepsilon] \leq \frac{\operatorname{Var}[X]}{\varepsilon^{2}}
+$$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We define a new random variable $\zeta^J_i$: $\zeta^J_i = 1$ if and only if we use $r^J$ guesses $x_i$ correctly, which means $b(x,r^J)\oplus \mathcal B(f(x),r^J\oplus e_i)=x_i$. Since for $J\neq K$, there exists $j\notin J\cap K$, such that $r^J\oplus r^K=r^j\oplus r^T$ for some $T\subset [l]$, $r^J$ and  $r^K$ are independent, and thus $\zeta^J_i$ and $\zeta^K_i$ are independent. Then for all $J\subset [l]$, $\zeta^J_i$ are pair-wise independent.&lt;/p&gt;
+&lt;p&gt;We omit $i$ for $\zeta_i^J$ for simplicity. Since $b(x,r^J)\oplus b(x,r^J\oplus e_i)$, if follows that $\zeta^J =1 $ if and only if $\mathcal B(f(x),r^J\oplus e_i)=b(x,r^J\oplus e_i)$. For $x\in S_n$, We have 
 $$
 \begin{align}
-\Pr\left[\sum_{J\subseteq[l]} \zeta^J\leq \frac m 2\right] &amp;amp;\leq \Pr\left[\left|\sum_{J\subseteq[l]}\zeta^J-\left(\frac12+\frac1{2p(n)}\right)\cdot m\right|\geq ]\frac1{2p(n)m}\right] \newline
+\Pr\left[\sum_{J\subseteq[l]} \zeta^J\leq \frac m 2\right] &amp;amp;\leq \Pr\left[\left|\sum_{J\subseteq[l]}\zeta^J-\left(\frac12+\frac1{2p(n)}\right)\cdot m\right|\geq \frac1{2p(n)m}\right] \newline
 &amp;amp;\leq \frac{m\cdot \text{Var}[\zeta]}{\left(\frac1{2p(n)}\cdot m\right)^2} \newline
 &amp;amp;\leq \frac{m\cdot \text{Var}[\zeta]}{\left(\frac1{2p(n)}\right)^2 \cdot (2n\cdot p(n)^2)} \newline
 &amp;amp;= \frac 1{2n}
 \end{align}
 $$
-And now its time to evaluate the probability of $z_1\cdots z_n=x_1\cdots x_n$, 
+Notice that we have used
 $$
 \begin{align}
-\Pr[z_1\cdots z_n=x_1\cdots x_n|x\in S_n]&amp;amp;\geq 1- \sum^n_{j=1}x\in \Pr[x\in S_n](\Pr[x_j\neq z_j] \newline
+\operatorname{Var}\left[\left|\sum_{J\subseteq[l]}\zeta^J-\left(\frac12+\frac1{2p(n)}\right)\cdot m\right|\right]
+&amp;amp;=\operatorname{E}\left[\left(\sum_{J\subseteq[l]}\zeta^J-\left(\frac12+\frac1{2p(n)}\right)\cdot m\right)^2\right] \newline
+&amp;amp;= \sum_{J,K\subset [l]}\operatorname{E}\left[(\zeta^J-u)(\zeta^K-u)\right] \newline
+&amp;amp;= \sum_{J\subset [l]}\operatorname{E}\left[(\zeta^J-u)^2\right] \newline
+&amp;amp;= m\cdot \operatorname{Var}[\zeta]
+\end{align}
+$$
+for $u=1/2+1/(2p(n))$, where the second last equality rely on the pairwise independent of $\zeta^J$ and $\zeta^K$ for $J\neq K$.&lt;/p&gt;
+&lt;p&gt;Thus, if we output the majority of $\zeta^J$, we have probability of wrong predication of $1-1/2n$.&lt;/p&gt;
+&lt;p&gt;And now its time to evaluate the probability of $z_1\cdots z_n=x_1\cdots x_n$, 
+$$
+\begin{align}
+\Pr[z_1\cdots z_n=x_1\cdots x_n|x\in S_n]&amp;amp;\geq 1- \sum^n_{j=1}x\in \Pr[x\in S_n]\cdot \Pr[x_j\neq z_j] \newline
 &amp;amp; =\frac {(1-\frac n{2n})}{4n\cdot p(n)^2}=\frac 1{8n\cdot p(n)^2}
 \end{align}
 $$
-Every time we get the output, we just test. If the output is wrong, we try algorithm $\mathcal B$ again. Within polynomial times of invoking, the success probability will get to $2/3$.&lt;/p&gt;
-&lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;h1 id=&#34;exercise&#34;&gt;Exercise&lt;/h1&gt;
-&lt;p&gt;Please don&amp;rsquo;t ask me for solutions, because I&amp;rsquo;m solving them, too. I would like to give some hints for difficult problems after I&amp;rsquo;ve done them.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Prove that if one-way function exists, then $\mathbf{NP}\backslash\mathbf{BPP}\neq \emptyset$.&lt;/li&gt;
-&lt;li&gt;Prove that in the proof of &lt;strong&gt;Goldreich-Levin Theorem&lt;/strong&gt;, for any $I,J\subseteq [l]$, $r^I$ and $r^J$ are independent.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
+​	Then $\Pr[z_1\cdots z_n=x_1\cdots x_n] \geq  \Pr[z_1\cdots z_n=x_1\cdots x_n|x\in S_n]\cdot \Pr[x\in S_n]$ which is polynomial and can be made overwhelming by repeating (Chernoff bound).&lt;/p&gt;
 </description>
         </item>
         <item>

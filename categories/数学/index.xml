@@ -14,6 +14,7 @@
       
       <guid>https://lingerois.com/p/%E5%9F%BA%E4%BA%8E%E6%A0%BC%E7%9A%84%E5%AF%86%E7%A0%81-%E5%9F%BA%E7%9F%B3%E7%AF%871-%E5%9F%BA%E7%A1%80/</guid>
       <description>注意, 本系列是Foundation of Lattice-Based Cryptography, 而不是Basic Lattice-Based Cryptography, 这意味着我们更多是关注基本定义, 困难问题, 算法, 而不是关注具体的密码方案. 此外, 基石对应foundation, 基础对应basics.
+在文章中, 我们可能会用到SageMath作为计算工具以展示例子, 这是一个语法类似于Python的功能强大的开源计算软件.
 基本定义 格实际上就是$\mathbb R^n$空间中周期出现的点阵, 它是$\mathbb R^n$的一个子集, 这里, &amp;ldquo;周期&amp;quot;是一个非常不精确的说法, 因此精确来说格可以定义如下.
  定义
 令$\Lambda\subset \mathbb R^n$, 如果存在$\mathbb R^n$中的线性无关向量组$\mathbf b_1,\cdots,\mathbf b_m$, 满足
@@ -22,7 +23,7 @@ $$ \mathbf v\in\Lambda\iff \exists z_1,\cdots,z_m\in\mathbb Z:\mathbf v=\sum_{i\
  定义中, 我们要求格点是基的系数为整数的线性组合. &amp;ldquo;秩&amp;quot;一词是从英文&amp;quot;rank&amp;quot;中翻译过来的. 如果读者具有较好的代数基础, 那么可以得出实际上格上一个$\mathbb Z$-模. 这里的格的秩实际上就是这个$\mathbb Z$-模的秩.
 其他 用SVP$\gamma$的Oracle求解GapSVP$\gamma$
 当给定GapSVP$\gamma$的输入$(\mathbf B,r)$的时候, 访问一次SVP$\gamma$的Oracle可以得到一个向量$v$长度为$r^\prime$使得$r^\prime\in[\lambda_1(\mathbf B),\gamma\lambda_1(\mathbf B)]$, 此时我们可以根据$r^\prime$来决定输入. 根据$r,\lambda_1(\mathbf B)$的大小不同, 有如下几种情况:
-其中阴影部分是我们能够得到的$r&#39;$的大小. 可见, 将得到的结果和$\gamma r$进行比较, 当$r&#39;&amp;lt;\gamma r$时, 就是1.</description>
+其中阴影部分是我们能够得到的$r&#39;$的大小.</description>
     </item>
     
     <item>
