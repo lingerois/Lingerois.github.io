@@ -2,44 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>算法 on Lingerois</title>
-    <link>https://lingerois.com/categories/%E7%AE%97%E6%B3%95/</link>
+    <link>https://flyzebraV.github.io/categories/%E7%AE%97%E6%B3%95/</link>
     <description>Recent content in 算法 on Lingerois</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Jul 2021 17:01:01 +0000</lastBuildDate><atom:link href="https://lingerois.com/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>伪随机性(1) 随机算法 谱图论</title>
-      <link>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/</link>
-      <pubDate>Tue, 06 Jul 2021 17:01:01 +0000</pubDate>
-      
-      <guid>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/</guid>
-      <description>本章主要通过一些随机化的算法介绍了两个工具:
- 马尔可夫不等式(Markov Inequality)和切尔诺夫界(Chernoff Bound) 用代数的方法研究图论, 即随机游走  笔记中, 我们不会关注本章中讲的具体算法, 而是主要关注有关谱图论(spetral graph theory)的部分.
-约定
- 在研究图$G$, 一般认为$G=(V,E)$, 其中$V,E$分别是点集和边集. 一般记为$|V|=n$, 图算法的复杂度也用有关$n$的函数来表示. 在本系列中, 如果向量(如$x$)出现在矩阵(如$M$)前面, 则$x$是行向量, 反之$x$为列向量. 记本文记号$xMx$相当于标准记号$\mathbf x^T\mathbf M\mathbf x$.  概率不等式  引理 Markov不等式
-令$X$是一个飞负的随机变量, 则对于任意$\alpha&amp;gt;0$, 有 $$ \Pr[X\geq \alpha]\leq \frac{\operatorname E[X]}{\alpha} $$
- Markov不等式的证明非常简单, 也显得非常粗略, 但是它对于推出Chernoff界已经足够了.
-书中介绍的是广义的Chernoff界, 证明同伯努利分布的证明略有不同.
- 定理 Chernoff界
-令$X_1,\cdots,X_t$是独立随机变量, 且都在$[0,1]$上取值, 令$X=(\sum_i X_i)/t$, 且$\mu=\operatorname{E}[X]$. 则有 $$ \Pr[|X-\mu|\geq \varepsilon]\leq 2\operatorname{exp}(-t\varepsilon^2/4) $$
- Chernoff界在随机算法中的非常重要, 它使得我们可以重复一个随机算法多次, 以大多数次数的输出结果为最终结果, 使得我们计算正确的概率显著提高.
-随机游走 伪随机性研究的一个重要工具就是谱图论. 它允许我们用代数的手段来研究图论. 谱图论中, 我们经常用到digraph和无向图:</description>
-    </item>
-    
-    <item>
-      <title>数论变换简介</title>
-      <link>https://lingerois.com/p/%E6%95%B0%E8%AE%BA%E5%8F%98%E6%8D%A2%E7%AE%80%E4%BB%8B/</link>
-      <pubDate>Sun, 12 Apr 2020 21:19:24 +0000</pubDate>
-      
-      <guid>https://lingerois.com/p/%E6%95%B0%E8%AE%BA%E5%8F%98%E6%8D%A2%E7%AE%80%E4%BB%8B/</guid>
-      <description>背景介绍 Ring-LWE和Modular-LWE问题已经在密码学理论和应用中非常广泛地使用了，而其中最为广泛使用的环，则是环$R_q=\mathbb Z_q[x]/\Phi_m(x)$，因此在这个环上快速进行乘法，成了基于Ring/Modular-LWE的密码算法实现中的效率方面关注的重要问题。
-现假设我们有多项式$a,b\in R_q$并且要计算它们相乘后在，如果采用直接在$\mathbb Z[x]$中计算乘积再求模的方式，我们首先得计算出$a\cdot b\in\mathbb Z[x]$，然后再依次模上$\Phi_m(x)$和$q$——这将会造成非常大的开销。幸运的是，我们有一个非常聪明的办法可以避免这个问题，该问题可以避免求多项式模$\Phi_m(x)$这一经常使用的操作，使得整个计算过程极大地加速，再配合上模素数运算的相关算法，可以使得整个运算在很快地时间内完成，极大提高了Ring/Modular-LWE相关算法的效率和实际应用价值。
-这个巧妙的办法就是运用称作数论变换$\mathsf{NTT}(\cdot)$的同构，将多项式变换$a,b$均为向量$\hat a,\hat b$，然后计算$\widehat{ab}=\hat a\odot \hat b$，计算完成后，再用逆数论变换$\mathsf{NTT}^{-1}$将$\widehat{ab}$恢复为$a\cdot b$。这里的$\mathsf{NTT}$和$\mathsf{NTT}^{-1}$均为非常简单的操作，而&amp;quot;$\odot$&amp;ldquo;就是简单地将两个相同长度的向量的对应位乘起来再模$q$以得到一个新的向量，是一个非常简单的操作！以上两个运算使得多项式的乘法可以高效的计算，更进一步如果我们将反复用到一个多项式用作乘数，我们甚至可以让它暂时始终保持数论变换下的形式，来取得更好的计算效率。
-下文中，我们将对上述过程进行形式化的描述，并介绍具体的算法，以及算法背后的一些数学知识。
-数论变换算法 数论变换算法的形式多种多样，我们采用文章[LN16]中的方式进行介绍，但对记号做一定的修改。选择这个文章中的方式的主要原因一来是因为该文对数论变换的描述非常接近离散傅里叶变换，因此熟悉离散傅里叶变换的读者可以快速明白整个算法的过程；二来该文中的描述足够简洁和清晰，这样想要阅读原文的读者也不会花费大量时间。改变原文的记号的是希望同Ring-LWE的开山之作[LPR12]及其其他相关文章相统一，以能更好地进行理论方面的解释。同时不熟悉傅里叶变化的读者也完全没有必要再去研究它的具体过程，以及它到底有什么用，我们在文章将其当成一个固定的模块来使用，它是数论变换的一个环节，而其逆变换也是数论逆变换的一个环节。
-   符号的意义 [LN16]中的符号 本文中的符号     傅里叶变换 $\mathrm{NTT}$ $\mathsf{DFT}$   傅里叶逆变换 $\mathrm{INTT}$ $\mathsf{DFT}^{-1}$   数论变换形式的多项式 - $\hat a$    我们考虑最常见的情形，设$m=2^d$是一个2的幂次，并令$n=\phi (m)$, 其中$\phi(\cdot)$是高斯函数，则有$n=2^{d-1}$。在这样的参数下，分圆多项式具有非常简洁的形式$\Phi_m=x^n+1$，模这样的分圆多项式的多项式环也是Ring/Modular-LWE算法中最常选择的环。如果素数$q$的选择也恰好使得$\mathbb Z_q^\times$中有一个阶为$m$的元素$r$，此时数论变换也就派上用场了。现在假设上述参数全部满足，计算环元素$a,b\in\mathbb Z_q[x]/\Phi_m(x)$可以通过数论变换来进行，由于多项式也可以写成由系数组成的向量的形式，对于任意多项式$c=c_0+c_1x+c_2x^2+\cdots+c_{n-1}c^{n-1}\in\mathbb Z_q[x]/\Phi_m(x)$，$\mathbb Z_q^n$中的向量，即$c=(c_0,c_1,\cdots,c_{n-1})$，有了这种对应后，我们不再区分几种变换函数中的参数是多项式还是向量。首先我们假设$\omega=r^2$，并令矩阵
-$$ \mathbf A=\left[ \begin{matrix} \omega^0 &amp;amp; \omega^0	&amp;amp; \omega^0 &amp;amp; \cdots &amp;amp; \omega^0 \newline \omega^0 &amp;amp; \omega^1	&amp;amp; \omega^2 &amp;amp; \cdots &amp;amp; \omega^{n-1} \newline \omega^0 &amp;amp; \omega^2 &amp;amp; \omega^4 &amp;amp; \cdots &amp;amp; \omega^{2(n-1)} \newline \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \newline \omega^0 &amp;amp; \omega^{n-1}	&amp;amp; \omega^{2(n-1)} &amp;amp; \cdots &amp;amp; \omega^{(n-1)^2} \end{matrix} \right] $$</description>
-    </item>
-    
+    <language>zh-cn</language><atom:link href="https://flyzebraV.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

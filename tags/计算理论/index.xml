@@ -2,98 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>计算理论 on Lingerois</title>
-    <link>https://lingerois.com/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</link>
+    <link>https://flyzebraV.github.io/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</link>
     <description>Recent content in 计算理论 on Lingerois</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Jul 2021 17:01:01 +0000</lastBuildDate><atom:link href="https://lingerois.com/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>伪随机性(1) 随机算法 谱图论</title>
-      <link>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/</link>
-      <pubDate>Tue, 06 Jul 2021 17:01:01 +0000</pubDate>
-      
-      <guid>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/</guid>
-      <description>本章主要通过一些随机化的算法介绍了两个工具:
- 马尔可夫不等式(Markov Inequality)和切尔诺夫界(Chernoff Bound) 用代数的方法研究图论, 即随机游走  笔记中, 我们不会关注本章中讲的具体算法, 而是主要关注有关谱图论(spetral graph theory)的部分.
-约定
- 在研究图$G$, 一般认为$G=(V,E)$, 其中$V,E$分别是点集和边集. 一般记为$|V|=n$, 图算法的复杂度也用有关$n$的函数来表示. 在本系列中, 如果向量(如$x$)出现在矩阵(如$M$)前面, 则$x$是行向量, 反之$x$为列向量. 记本文记号$xMx$相当于标准记号$\mathbf x^T\mathbf M\mathbf x$.  概率不等式  引理 Markov不等式
-令$X$是一个飞负的随机变量, 则对于任意$\alpha&amp;gt;0$, 有 $$ \Pr[X\geq \alpha]\leq \frac{\operatorname E[X]}{\alpha} $$
- Markov不等式的证明非常简单, 也显得非常粗略, 但是它对于推出Chernoff界已经足够了.
-书中介绍的是广义的Chernoff界, 证明同伯努利分布的证明略有不同.
- 定理 Chernoff界
-令$X_1,\cdots,X_t$是独立随机变量, 且都在$[0,1]$上取值, 令$X=(\sum_i X_i)/t$, 且$\mu=\operatorname{E}[X]$. 则有 $$ \Pr[|X-\mu|\geq \varepsilon]\leq 2\operatorname{exp}(-t\varepsilon^2/4) $$
- Chernoff界在随机算法中的非常重要, 它使得我们可以重复一个随机算法多次, 以大多数次数的输出结果为最终结果, 使得我们计算正确的概率显著提高.
-随机游走 伪随机性研究的一个重要工具就是谱图论. 它允许我们用代数的手段来研究图论. 谱图论中, 我们经常用到digraph和无向图:</description>
-    </item>
-    
-    <item>
-      <title>计算复杂性(3) NP完备性</title>
-      <link>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A73-np%E5%AE%8C%E5%A4%87%E6%80%A7/</link>
-      <pubDate>Tue, 20 Aug 2019 23:16:19 +0000</pubDate>
-      
-      <guid>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A73-np%E5%AE%8C%E5%A4%87%E6%80%A7/</guid>
-      <description>If $\mathbf{P}=\mathbf{NP}$, then $\mathbf N=1$ or $\mathbf{P}=0$.
-----Turing Machine
-$\mathbf{NP}$完备性的是计算复杂性上一个至关重要的问题. 简而言之, $\mathbf{NP}$问题就是那些能够在确定多项式时间内被验证答案的判定问题, 即那些很容易就被检验的问题. $\mathbf{NP}$问题中, 有大量非常有现实意义但到现目前为止都没有好的解决办法的问题. 有关$\mathbf{NP}$完备性的讨论热度也从来没有衰减过. 2000年, 美国克雷数学研究所将$\mathbf{P}\overset{?}=\mathbf{NP}$列为七个千禧年大奖难题之一.
-非确定计算模型 现在我们介绍一个计算模型. 该计算模型机的功能非常强大, 能够在多项式时间内求解很多我们尚未发现高效算法的问题.
-非确定图灵机  非确定图灵机就像一台可以有无限个线程的计算机.
- 非确定图灵机(nondeterministic Turing machine, NDTM)与图灵机的定义大致相同. 不同的是, 非确定图灵机有两个转移函数, 每一步计算可以选择两个转移函数中的任何一个. 非确定图灵机物理上是不能实现的.
- 定义 非确定图灵机
-一个非确定图灵机$N$是一个三元组$(\Gamma, Q, \delta=(\delta_1,\delta_2))$.
- 有限集$\Gamma$是字母表, 表示纸带可以记录的符号集. 有限集$Q$是状态集, 表示状态机的状态, 其中一个特殊的状态$q_\text{start}$为起始状态, $q_\text{accept}$为表示接受的停机状态, $q_\text{reject}$为表示拒绝的停机状态. $\delta_1,\delta_2: Q\times \Gamma^k\to Q\times \Gamma^{k-1}\times \lbrace \text L,\text S,\text R\rbrace ^k$是两个转移函数   至于如何选择转移函数, 不是我们关心的问题, 因为我们非确定图灵机对问题的判定只关心计算路径.
-非确定图灵机的中还有一点需要说的是, 非确定图灵机对一个语言的判定结果, 是从最终的停机状态进行输出的. 实际上我们也可以这样来定义图灵机, 但是 没有必要. 非确定图灵机之所以要这样定义, 是因为其判定一个语言的定义与图灵机有所不同.</description>
-    </item>
-    
-    <item>
-      <title>计算复杂性(2) 图灵机与可计算性</title>
-      <link>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A72-%E5%9B%BE%E7%81%B5%E6%9C%BA%E4%B8%8E%E5%8F%AF%E8%AE%A1%E7%AE%97%E6%80%A7/</link>
-      <pubDate>Fri, 29 Mar 2019 12:06:45 +0000</pubDate>
-      
-      <guid>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A72-%E5%9B%BE%E7%81%B5%E6%9C%BA%E4%B8%8E%E5%8F%AF%E8%AE%A1%E7%AE%97%E6%80%A7/</guid>
-      <description>图灵机是一种计算复杂性常用的一种计算模型, 图灵机由于结构简单并且功能完善而被广泛采用, 贯穿整个计算复杂性研究的始终.
- 这将是非常长的一个章节. 本节开始, 我们正式开始讲解现代复杂性理论. 当你看到一套科学理论中有&amp;quot;现代&amp;quot;这两个字的时候, 你应该做好心里准备, 因为这意味着它并不是那么容易懂. 这些理论是现当代著名科学家的重要研究成果, 需要花上一些时间去理解.
- 符号约定    符号 意义     $\mid x\mid$ 串$x$的长度   $ \llcorner M\lrcorner$ 图灵机$M$的编码   $\mathbb M$ 所有图灵机的集合    图灵机计算模型 图灵机是一种计算复杂性常用的一种计算模型, 图灵机由于结构简单并且功能完善[^1]而被广泛采用, 贯穿整个计算复杂性研究的始终.
-图灵机 我们前面已经看到, 自动机确实能解决一些判定问题, 即正则语言的判定问题. 那么, 正则语言到底有多少? 实际上我们会发现, 正则语言真的非常少. 判定一个语言是不是正则语言, 可以根据著名的泵引理(pumping lemma)来完成, 我们这里不对其进行正式介绍, 但是我们直接说明, 通过泵引理, 下面这一的简单的语言都不是正则语言: $$ L=\lbrace x:x中的0和1个数相同 \rbrace $$ 如果要直观地理解, 我们的自动机中并没有结构来记录串中的$0$和$1$到底有多少个, 也就无法完成判定工作, 因为我们可以猜测这个语言不是正则语言. 为了加强自动机的计算能力, 我们引入一种新的强大的计算模型, 并且出人意料的是, 它的结果相当简单.</description>
-    </item>
-    
-    <item>
-      <title>Averaging Argument</title>
-      <link>https://lingerois.com/p/averaging-argument/</link>
-      <pubDate>Thu, 21 Mar 2019 23:45:57 +0000</pubDate>
-      
-      <guid>https://lingerois.com/p/averaging-argument/</guid>
-      <description>The following example can be regarded as a generalization of Pigeonhole Principle.
- Example 1
-If every person likes at least $1/3$ of the books in a library, then the library has a book, which at least $1/3$ of people like.
- Proof: Suppose there are $N$ people in total and $B$ books in the library. Let all the people leave a mark on the books they like, then there are at least $NB/3$ marks.</description>
-    </item>
-    
+    <lastBuildDate>Tue, 05 Mar 2019 12:06:45 +0000</lastBuildDate><atom:link href="https://flyzebraV.github.io/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>计算复杂性(1) 自动机与正则语言</title>
-      <link>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A71-%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80/</link>
+      <link>https://flyzebraV.github.io/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A71-%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80/</link>
       <pubDate>Tue, 05 Mar 2019 12:06:45 +0000</pubDate>
       
-      <guid>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A71-%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80/</guid>
+      <guid>https://flyzebraV.github.io/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A71-%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80/</guid>
       <description>计算问题 什么是计算机? 计算, 就是解决某个具体问题的算法, 得出相应的答案. 计算机就是能执行某个具体算法的机器. 即Computer就用来是Compute的机器. 此外, 讨论什么是机器, 对我们研究计算机科学毫无帮助, 你只需要知道, 计算机就是用来执行算法的机器. 我们要做的就是, 用最简单的理论模型, 最大程度的抽象化我们现有的计算机.
 语言  定义 语言
 一个字母表(alphabet)是一个非空有限集合, 该集合中的元素称为符号(symbol).
 一个字母表$\Sigma$上的语言(language)是$\Sigma$中的元素构成的有限序列(称为串, 即string)的集合.
- 例如字母表$\Sigma=\lbrace 0,1\rbrace$, 则我们可以定义一个$\Sigma$上的语言$L=\lbrace x_1x_2\cdots x_n:\text{如果}x_i= 0,则x_{i+1}= 0\rbrace$, 则该语言为 $$ L=\lbrace\varepsilon, 0,1,10,11,100,110,111,\cdots\rbrace $$ 即所有的$1$都出现在任何$0$之前的串. 其中, $\varepsilon$表示空串, 即长度为$0$的串.
+ 例如字母表$\Sigma={0,1}$, 则我们可以定义一个$\Sigma$上的语言$L={x_1x_2\cdots x_n|\text{如果}x_i= 0,则x_{i+1}= 0}$, 则该语言为 $$ L={\varepsilon, 0,1,10,11,100,110,111,\cdots} $$ 即所有的$1$都出现在任何$0$之前的串. 其中, $\varepsilon$表示空串, 即长度为$0$的串.
 这里要注意的是
  我们说&amp;quot;序列&amp;quot;就要考虑顺序, 即$001$和$100$是不同的串. 串可以是空串, 即长度为$0$的串, 空串通常记作$\varepsilon$.  我们也可用更加形式化的描述来定义语言.
  定义 语言
-设$\Sigma$是一个字母表, $\Sigma^0=\lbrace\varepsilon\rbrace$表示空串的集合, $\Sigma^n=\Sigma\times \Sigma\times\cdots\times \Sigma$为$n$个$\Sigma$的直积. 则$\Sigma$上的一个语言定义为$\Sigma^\ast=\bigcup\limits_{i\in\mathbb{N}}\Sigma^i$的子集.
+设$\Sigma$是一个字母表, $\Sigma^0={\varepsilon}$表示空串的集合, $\Sigma^n=\Sigma\times \Sigma\times\cdots\times \Sigma$为$n$个$\Sigma$的直积. 则$\Sigma$上的一个语言定义为$\Sigma^\ast=\bigcup\limits_{i\in\mathbb{N}}\Sigma^i$的子集.
  这里要注意的是$\Sigma^0$不是空集, 而是含有一个特殊的元素$\varepsilon$.
 语言这个词可以说是一个相当糟糕的术语, 我们在这里不对这个术语本身进行过多的讨论, 但我们举例说明语言有多强大. 我们举一个有意义的例子.
-例如, 一个语言可以用来表示所有的有向无环图, 我们试图用字母表$\Sigma=\lbrace 0,1\rbrace$上的语言来对图进行编码. 首先我们需要表示图$G=(V,E)$中的$V$, 我们约定$\dagger$之前的部分表示图中每个点的名称的长度$v$, 而$\dagger$之后依次的每个长度为$v$的连续子串表示图所有点的名称.</description>
+例如, 一个语言可以用来表示所有的有向无环图, 我们试图用字母表$\Sigma={0,1}$上的语言来对图进行编码. 首先我们需要表示图$G=(V,E)$中的$V$, 我们约定$\dagger$之前的部分表示图中每个点的名称的长度$v$, 而$\dagger$之后依次的每个长度为$v$的连续子串表示图所有点的名称. 在所有的名称后, 我们用另一个$\dagger$作为分割, 其后依次的每个长度为$2v$子串表示一条有向边.</description>
     </item>
     
     <item>
       <title>计算复杂性(0) 目录</title>
-      <link>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A70-%E7%9B%AE%E5%BD%95/</link>
+      <link>https://flyzebraV.github.io/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A70-%E7%9B%AE%E5%BD%95/</link>
       <pubDate>Mon, 04 Mar 2019 21:29:13 +0000</pubDate>
       
-      <guid>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A70-%E7%9B%AE%E5%BD%95/</guid>
+      <guid>https://flyzebraV.github.io/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A70-%E7%9B%AE%E5%BD%95/</guid>
       <description>写在前面 该笔记是我学习计算复杂性课程以及阅读相关书籍的过程中整理的笔记及个人理解. 整理成笔记除了加深我的个人理解外, 在这里分享给大家, 一方面也是是希望更多人能够理解这些内容, 感受这个世界为我们准备的惊喜. 另一方面也是为现在或是将来准备学习计算机的同学展示他们或许没有接触到的计算机科学的一角, 让大家知道计算机科学内涵的深度和广度, 能够看到Coding以外其他的东西, 也许能改变他们以后的人生路径. 注意, 本文不能替代任何课程, 教材或论文, 想要真正学习计算复杂性知识, 还是需要通过正规途径学习. 除此之外, 计算复杂性是密码学等一系列计算机理论课程的基础, 想要从事计算机理论方面的研究, 该课程是技能树上必点的技能.
 Thanks to Prof. Fu (Yuxi Fu) at SJTU for giving us wonderful lectures.
 如何学习? 不要沉溺于哲学问题(虽然可以作为兴趣偶尔讨论), 形式科学就要有形式科学该有的样子, 能从公理中得出的问题才是你该思考的问题.

@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Lingerois</title>
-    <link>https://lingerois.com/page/</link>
+    <link>https://flyzebraV.github.io/page/</link>
     <description>Recent content in Pages on Lingerois</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://lingerois.com/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://flyzebraV.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Archives</title>
-      <link>https://lingerois.com/archives/</link>
+      <link>https://flyzebraV.github.io/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.com/archives/</guid>
+      <guid>https://flyzebraV.github.io/archives/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://lingerois.com/about/</link>
+      <link>https://flyzebraV.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.com/about/</guid>
+      <guid>https://flyzebraV.github.io/about/</guid>
       <description>本博客的文章内容作者分享学习/研究生活中学到的知识, 并配上一些个人理解和直观解释.
 关于内容 本博客涉及的内容大多与博主的研究方向或个人兴趣相关, 主要包括以下几个方面:
   数学
 主要是集中在代数, 组合论, 图论, 概率论等与计算机科学相关的分支. 但是可能也会科普性或非科普性地发布作者感兴趣的其他分支.
   密码学
 所有内容都是关于现代密码学的. 例如, 公钥密码学, 伪随机性等.
-  计算理论
+  计算理论与复杂性理论
 主要是计算机科学的基础理论, 涉及计算理论, 计算复杂性等学科.
   量子计算
 包括量子计算的模型/量子算法/量子密码学等.
@@ -36,32 +36,30 @@
 介绍一些相关领域的算法或者算法分析技术.
   日常记录
 作者参与学术会议或培训学校的见闻, 以及会议的新闻和感悟等.
-  其他
-其他任何内容. 该部分内容控制在10%以内.
-  文章发表的方式 所有的文章并不是在作者发布就写作完毕. 由于文章大多很长, 且涉及的公式定理很多, 我无法在发表文章时就做到面面俱到, 因此, 所有文章的更新都是增量式的. 如果你希望博主尽量早些更新文章中的某个板块, 可以在评论中说明, 但不保证会被完全采纳.
-关于作者 作者是目前就读于上海交通大学的博士研究生, 主要从密码学的研究. 作者所在的实验室是密码系统安全实验室(Crypto System Laboratory), 导师是郁昱老师.
+  文章发表的方式 所有的文章并不是在作者发布就写作完毕. 由于文章大多很长, 且涉及的公式定理很多, 我无法在发表文章时就做到面面俱到, 因此, 所有文章的更新都是增量式的. 如果你希望博主尽量早些更新文章中的某个板块, 可以在评论中说名, 但不保证会被完全采纳.
+关于作者 作者是目前就读于上海交通大学的硕士研究生, 主要从密码学的研究. 作者所在的实验室是密码系统安全实验室(Crypto System Laboratory), 导师是郁昱老师.
 作者的联系方式
  电子邮箱: lingeros@sjtu.edu.cn
 个人主页: 待定
- 研究领域  基于格的密码学 不可区分性混淆  为什么要写博客?</description>
+ 为什么要写博客? 写博客主要有3个原因. 第一, 治疗失眠. 第二, 传播一些冷计算机科学冷知识, 让国内计算机系的本科同学明白什么是真正的计算机科学, 而不是整天埋在代码海中.</description>
     </item>
     
     <item>
       <title>Comment</title>
-      <link>https://lingerois.com/comment/</link>
+      <link>https://flyzebraV.github.io/comment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.com/comment/</guid>
+      <guid>https://flyzebraV.github.io/comment/</guid>
       <description># Hi~ 这里是留言板, 欢迎留言, 在这里讨论的话题不受限制.
 敏感话题, 言语攻击和民科内容将被删除.</description>
     </item>
     
     <item>
       <title>Search</title>
-      <link>https://lingerois.com/search/</link>
+      <link>https://flyzebraV.github.io/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lingerois.com/search/</guid>
+      <guid>https://flyzebraV.github.io/search/</guid>
       <description></description>
     </item>
     
