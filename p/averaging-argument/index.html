@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='In computational complexity theory and cryptography, averaging argument is a standard argument for proving theorems. It usually allows us to convert probabilistic polynomial-time algorithms into non-uniform polynomial-size circuits. (Wikipedia)'><title>Averaging Argument</title>
+
+<link rel='canonical' href='https://lingerois.com/p/averaging-argument/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Averaging Argument'>
+<meta property='og:description' content='In computational complexity theory and cryptography, averaging argument is a standard argument for proving theorems. It usually allows us to convert probabilistic polynomial-time algorithms into non-uniform polynomial-size circuits. (Wikipedia)'>
+<meta property='og:url' content='https://lingerois.com/p/averaging-argument/'>
+<meta property='og:site_name' content='Lingerois'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='计算理论' /><meta property='article:tag' content='密码学' /><meta property='article:tag' content='概率论' /><meta property='article:published_time' content='2019-03-21T23:45:57&#43;00:00'/><meta property='article:modified_time' content='2019-03-21T23:45:57&#43;00:00'/><meta property='og:image' content='https://lingerois.com/p/averaging-argument/cover.jpg' />
+<meta name="twitter:title" content="Averaging Argument">
+<meta name="twitter:description" content="In computational complexity theory and cryptography, averaging argument is a standard argument for proving theorems. It usually allows us to convert probabilistic polynomial-time algorithms into non-uniform polynomial-size circuits. (Wikipedia)"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://lingerois.com/p/averaging-argument/cover.jpg' />
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hua859a2985a863b05c0c2784270e24cb6_371319_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://lingerois.com">Lingerois</a></h1>
+        <h2 class="site-description">Fatal fate, doomed doom.</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/comment/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>Comment</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://lingerois.com" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/averaging-argument/">
+                <img src="/p/averaging-argument/cover_hu051f630a141098dbec723c4cdb2073a7_1476742_800x0_resize_q75_box.jpg"
+                        srcset="/p/averaging-argument/cover_hu051f630a141098dbec723c4cdb2073a7_1476742_800x0_resize_q75_box.jpg 800w, /p/averaging-argument/cover_hu051f630a141098dbec723c4cdb2073a7_1476742_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="222" 
+                        loading="lazy"
+                        alt="Featured image of post Averaging Argument" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" >
+                计算理论
+            </a>
+        
+            <a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" >
+                密码学
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/averaging-argument/">Averaging Argument</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        In computational complexity theory and cryptography, averaging argument is a standard argument for proving theorems. It usually allows us to convert probabilistic polynomial-time algorithms into non-uniform polynomial-size circuits. (Wikipedia)
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Mar 21, 2019</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <hr>
+<p>The following example can be regarded as a generalization of Pigeonhole Principle.</p>
+<center><img src="Pigeons.jpg" width="350"/></center>
+<blockquote>
+<p><strong>Example 1</strong></p>
+<p>If every person likes at least $1/3$ of the books in a library, then the library has a book, which at least $1/3$ of people like.</p>
+</blockquote>
+<p><strong>Proof</strong>: Suppose there are $N$ people in total and $B$ books in the library. Let all the people leave a mark on the books they like, then there are at least $NB/3$ marks. Presume there are no such book that has at least $M/3$ books on it, then the total number of marks would be less than $NB/3$, contradicted.</p>
+<hr>
+<p>When dealing with problems solved by the pigeonhole principle, we know the total number of pigeons and pigeonholes. For problems solved by averaging argument, we usually don&rsquo;t see the number of pigeonholes or the number of pigeons or both of them. In this case, we &ldquo;imagine&rdquo; the number of pigeons and pigeonholes and keep them in mind.</p>
+<p>When talking about probability, the case is always the latter, because we don&rsquo;t count the exact number of pigeons and their holes.</p>
+<hr>
+<p>Let&rsquo;s introduce two formal discriptions of averaging argument.</p>
+<blockquote>
+<p><span style='color:blue'><strong>Averaging Argument</strong></span></p>
+<p>Let $X$ and $Y$ be sets, and $p$ be a prediction on $X\times Y$. Let $\alpha$ be a real number in the interval $[0,1]$. If for each $x$ in $X$, there exists at least $\alpha|Y|$ in $Y$ that satisfy $p(x,y)$. Then, there exists a $y$ in $Y$ such that there exist at least $\alpha|X|$ elements $x$ in $X$ that satisfy $p(x,y)$.</p>
+</blockquote>
+<p><strong>Proof</strong>: We can construct a proof of the same style as the proof of <strong>Example 1</strong>.</p>
+<p>Notice that averaging argument can be generalized to continuous sets $X$ and $Y$ as well as probabilistic situations in  <span style='color:blue'><strong>Averaging Argument</strong></span>.</p>
+<blockquote>
+<p><span style='color:red'><strong>Averaging Argument</strong> </span></p>
+<p>Let $f$ be a function. If we have a circuit $C$ such that when $x$ is chosen uniformly at random and $y$ is chosen independently from some distribution $\mathcal Y$ over $\lbrace 0,1\rbrace^m$, we have $C(x,y)=f(x)$ holds with probability at least $\rho$. Then there exists a single string $y_0\in\lbrace0,1\rbrace^m$ such that $\Pr[C(x,y_0)]&gt;\rho$.</p>
+</blockquote>
+<p><strong>Proof</strong>: Keeping the unseen pigeonhole number in mind, the proof might get simple. But we can also prove it in probabilistic style.</p>
+<p>If there&rsquo;s no such $y_0\in\lbrace0,1\rbrace^m$ s.t. $\Pr[C(x,y_0)]&gt;\rho$, then lets count the probability of $C(x,y)=f(x)$ s.t. $x$ is chosen uniformly at random and $y$ is chosen independently from some distribution $\mathcal Y$.
+$$
+\begin{align}
+\Pr_{x\gets U,y\gets \mathcal Y}[C(x,y)=f(x)] &amp;= \sum_{y\in\lbrace0,1\rbrace^m} \Pr_{x\gets U}[C(x,y)=f(x)]\cdot \Pr[\mathcal y\gets \mathcal Y] \<br>
+&amp;&lt; \sum_{y\in\lbrace0,1\rbrace^m}\rho\Pr[\mathcal y\gets \mathcal Y]=\rho
+\end{align}
+$$
+Proof done.</p>
+<hr>
+<p><span style='color:red'><strong>Averaging Argument</strong> </span> is a generalization of <span style='color:blue'><strong>Averaging Argument</strong></span>, since it makes no limitation of $y$&rsquo;s distribution, other than being independent to $x$.</p>
+<hr>
+<p>Averaging argument are used in the proofs of some interesting results of complexity. A simple example is the proof of $\mathbf{BPP}\in\mathbf P_{/\operatorname{poly}}$.</p>
+<blockquote>
+<p><strong>Theorem</strong></p>
+<p>$\mathbf{BPP}\in\mathbf P_{/\operatorname{poly}}$.</p>
+</blockquote>
+<p><strong>Proof</strong>: For any $L\in\mathbf{BPP}$, there exists a polynomial time turing machine $\mathsf {TM}$ s.t.
+$$
+\Pr_{r\gets\lbrace0,1\rbrace^{p(n)}}[\mathsf{TM}(x,r)\neq L(x)]\leq 1/2^{n+1}
+$$
+holds for every $x\in\lbrace0,1\rbrace^n$. We find out a $r_0$ s.t. $\mathsf{TM}(x,r_0)=L(x)$ for all $x\in\lbrace0,1\rbrace^n$. We interprete the above fact as follows:</p>
+<p>For each $x\in\lbrace0,1\rbrace^n$, there exists at least a $1-1/2^{n+1}$ fraction of $r$&rsquo;s that makes $\mathsf{TM}(x,r)=L(x)$ holds. Then by <span style='color:blue'><strong>Averaging Argument</strong></span>, there exists a $r_0$ s.t. at least $1-1/2^{n+1}$ fraction of $x\in\lbrace0,1\rbrace^n$ satisfy $\mathsf{TM}(x,r_0)=L(x)$. Take this $r_0$ as advice, we get $L\in \mathbf P_{/\operatorname{poly}}$.</p>
+<hr>
+<p>The basic idea of <span style='color:red'><strong>Averaging Argument</strong></span> can be used elsewhere.</p>
+<p>The next exam is quite important, which will be used in the proof of <strong>Goldreich-Levin Theorem</strong>.</p>
+<blockquote>
+<p><strong>Example 2</strong></p>
+<p>Let $f$ be a function $f:\lbrace0,1\rbrace^n\to \lbrace0,1\rbrace^{l(n)}$ and $f^\prime :\lbrace0,1\rbrace^n \times\lbrace0,1\rbrace^n\to  \lbrace0,1\rbrace^{l(n)}\times \lbrace0,1\rbrace^n$ defines as
+$$
+f^\prime(x,r)=(f(x),r)
+$$
+where $|x|=|r|$. Let $\mathsf{gl}(x,r)=\bigoplus_{i=1}^n x_i\cdot r_i$.</p>
+<p>Suppose there exists a $\mathsf{PPT}$ algorithm $\mathcal A$ with running time $t$ and satisfy
+$$
+\Pr\limits_{
+x\leftarrow{0,1}^n ;;
+r\leftarrow{0,1}^n
+} [\mathcal A(f(x),r)=\mathsf{gl}(x,r)]\geq\frac 1 2+\varepsilon(n)
+$$
+Then there exists a set $\mathcal S_n\subseteq \lbrace0,1\rbrace^n$ of size at least $\frac{\varepsilon(n)}2\cdot 2^n$ such that for every $x\in \mathcal S_n$ it holds that 
+$$
+\Pr\limits_{; r \leftarrow {0,1}^n}[\mathcal A(f(x),r)=\mathsf{gl}(x,r)]\geq \frac 1 2+\frac{\varepsilon (n)} 2
+$$</p>
+</blockquote>
+<p><strong>Proof</strong>: Still, we keep in mind the unseen number of pigeonholes. We have &ldquo;1&rdquo; pigeonholes. &ldquo;1&rdquo; means if we choose a pigeonhole uniformly at random from all the pigeonholes then we have probability &ldquo;1&rdquo; that we chosen from the set of all pigeonholes… This is not verbose, since there are cases that we choose a pigeonhole from a subset with less than &ldquo;1&rdquo; pigeonhole.</p>
+<p>We assume we have probability $p$ to choose $x$ from $\mathcal S_n$ and then we have probability $(1-p)$ to choose $x$ from $\overline{\mathcal S_n}=\lbrace0,1\rbrace^n-\mathcal S_n$. We want to reckon the lower bound of $\mathcal S_n$, so we make event $\Pr[\mathcal A(f(x),r)=\mathsf{gl}(x,r)]$ to happen as frequent as posible when $x\gets \mathcal S_n$. As for cases in $\overline{\mathcal S_n}$, by the assumption made it has to happen with probability as least $\frac 1 2+\frac{\varepsilon (n)} 2$, then we have 
+$$
+\frac 1 2+\varepsilon(n) \leq \Pr\limits_{x\leftarrow{0,1}^n ;;
+r\leftarrow{0,1}^n}[\mathcal A(f(x),r)=\mathsf{gl}(x,r)] \leq p\times 1+(1-p)\times (\frac 1 2+\frac{\varepsilon (n)} 2)\leq p+\frac 1 2+\frac{\varepsilon(n)}{2}
+$$
+The las t inequality is obtained by drop $-p$ in $1-p$. By solving the inequality
+$$
+p\geq \frac{\varepsilon (n)}2
+$$
+Then we have 
+$$
+|\mathcal S_n|\geq \frac{\varepsilon(n)}2\cdot 2^n
+$$</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/">计算理论</a>
+        
+            <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+        
+            <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%9F%BA%E4%BA%8E%E6%A0%BC%E7%9A%84%E5%AF%86%E7%A0%81-%E5%9F%BA%E7%9F%B3%E7%AF%871-%E5%9F%BA%E7%A1%80/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%9F%BA%E4%BA%8E%E6%A0%BC%E7%9A%84%E5%AF%86%E7%A0%81-%E5%9F%BA%E7%9F%B3%E7%AF%871-%E5%9F%BA%E7%A1%80/lattice.94c848783155edc19ad8bdf7c1e71661_hua6f54cc5d80ac1079aa515d877acc994_770352_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="基于格的密码 基石篇(1) 基础" 
+                        data-hash="md5-lMhIeDFV7cGa2L33wecWYQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">基于格的密码 基石篇(1) 基础</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/random.8795d3fdb98c9c17fe7613afe9e50ada_hu4fc30b55960c7cda070a0397d70e4b33_63379_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="伪随机性(1) 随机算法 谱图论" 
+                        data-hash="md5-h5XT/bmMnBf&#43;dhOv6eUK2g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">伪随机性(1) 随机算法 谱图论</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A73-np%E5%AE%8C%E5%A4%87%E6%80%A7/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A73-np%E5%AE%8C%E5%A4%87%E6%80%A7/turing_machine.e7cbb5ca884516b1ebed8012dcf66162_hu0166a620cecfe8b8446df8ecb324d4a0_390991_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="计算复杂性(3) NP完备性" 
+                        data-hash="md5-58u1yohFFrHr7YAS3PZhYg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">计算复杂性(3) NP完备性</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%863-bgv%E6%96%B9%E6%A1%88/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%863-bgv%E6%96%B9%E6%A1%88/fog.3b9b2e32396518361399f058b7cdb81f_hu165ac214da6e531d826e0fd7ad766063_27843_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="同态加密(3) BGV方案" 
+                        data-hash="md5-O5suMjllGDYTmfBYt824Hw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">同态加密(3) BGV方案</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%862-bv11b%E6%96%B9%E6%A1%88/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%862-bv11b%E6%96%B9%E6%A1%88/fog.3b9b2e32396518361399f058b7cdb81f_hu165ac214da6e531d826e0fd7ad766063_27843_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="同态加密(2) BV11b方案" 
+                        data-hash="md5-O5suMjllGDYTmfBYt824Hw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">同态加密(2) BV11b方案</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css" />
+
+<div id="vssue"></div>
+
+<script src="https://unpkg.com/vue/dist/vue.runtime.min.js"></script>
+<script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#vssue",
+        render: (h) =>
+            h("Vssue", {
+                props: {
+                    title: "Averaging Argument",
+                    options: {
+                        proxy: (url) => "https://cors-anywhere.azm.workers.dev/" + url,
+                        owner: "lingerois",
+                        repo: "lingerois.github.io",
+                        clientId: "634f4b816590d54006ca",
+                        clientSecret: "f6207230aed974ad5a146625cf68fbd956ed76c0",
+                    },
+                },
+            }),
+    });
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 Lingerois
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [["$", "$"]],
+          },
+          displayMath: [
+            ["$$", "$$"],
+            ["\[\[", "\]\]"],
+          ],
+          svg: {
+            fontCache: "global",
+          },
+        };
+      </script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script
+        id="MathJax-script"
+        async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      ></script>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

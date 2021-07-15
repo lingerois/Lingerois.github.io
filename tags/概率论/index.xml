@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>概率论 on Lingerois</title>
+    <link>https://lingerois.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/</link>
+    <description>Recent content in 概率论 on Lingerois</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2019 23:45:57 +0000</lastBuildDate><atom:link href="https://lingerois.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Averaging Argument</title>
+      <link>https://lingerois.com/p/averaging-argument/</link>
+      <pubDate>Thu, 21 Mar 2019 23:45:57 +0000</pubDate>
+      
+      <guid>https://lingerois.com/p/averaging-argument/</guid>
+      <description>The following example can be regarded as a generalization of Pigeonhole Principle.
+ Example 1
+If every person likes at least $1/3$ of the books in a library, then the library has a book, which at least $1/3$ of people like.
+ Proof: Suppose there are $N$ people in total and $B$ books in the library. Let all the people leave a mark on the books they like, then there are at least $NB/3$ marks.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,17 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>密码学 on Lingerois</title>
-    <link>https://flyzebraV.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</link>
+    <link>https://lingerois.com/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</link>
     <description>Recent content in 密码学 on Lingerois</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 11 Aug 2019 21:29:13 +0000</lastBuildDate><atom:link href="https://flyzebraV.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Aug 2019 15:40:01 +0000</lastBuildDate><atom:link href="https://lingerois.com/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>同态加密1 GSW13方案</title>
-      <link>https://flyzebraV.github.io/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%861-gsw13%E6%96%B9%E6%A1%88/</link>
+      <title>同态加密(3) BGV方案</title>
+      <link>https://lingerois.com/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%863-bgv%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Sun, 18 Aug 2019 15:40:01 +0000</pubDate>
+      
+      <guid>https://lingerois.com/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%863-bgv%E6%96%B9%E6%A1%88/</guid>
+      <description>BGV同态加密方案是由Zvika Brakerski, Graig Gentry, Vindo Vaikuntanathan提出于[BGV12] 1. 该方案是BV11b方案基础上一个较大的改进. 该方案挖掘出BV11b方案中模数切换可以降低密文的绝对噪声这一特点, 将其发扬广大, 使得在加密在无需Bootstrapping的情况下可以做到较多层数的同态乘法运算.
+如果需要实现全同态加密, 该方案仍需要引入Circular Security假设和Boostrapping. 但是由于模数切换使得我们可以在不进行Bootstrapping的情况下做较多次数的同态运算, 并且使得Bootstrapping之前的密文模数变得非常小, 因此Bootstrapping是非常容易的. 因此该方法能够显著降低Bootstrapping的次数和难度.
+简介 我们在介绍BV11b方案的时候, 介绍过密文的格式为$(\mathbf v,w)$, 此处我们忽略了密文的同态层数. 密钥的解密可以表示为
+  $\mathsf{Dec}(sk=\mathbf s&#39;,(\mathbf v,w))$: 计算并输出
+$$ (w-\langle\mathbf v,\mathbf s&#39;\rangle\mod q)\mod 2 $$
+  我们将采用另一种形式的LWE加密来表示上述问题(在LWE介绍性文章(写成后地址将被更新到这里)以及本文之后的内容会有介绍), 用$\mathbf c$表示密文, 用$\mathbf s$表述明文, 上述解密过程可以被简化为$[[\langle\mathbf c,\mathbf s\rangle]_q]_2$, 其中$[\cdot]_k$表示模$k$运算. 这种形式的密文噪声体现在哪里呢? 其实本身就是大$[\langle\mathbf c,\mathbf s\rangle]_q$概的噪声.
+BV11b的核心思想之一是在最后同态计算结束后, 需要将大密文(即维数和模数较大的密文)转换为小密文(即模数和维数较小的密文). 其中, 维数切换的操作是平凡, 而模数切换的操作需要一定的技巧性, 且其安全性依赖于稀疏子集和假设. 一个不太让人感觉到的惊奇的现象是, 在进行模数切换的时, 噪声也成比例减小了. 即我们有如下引理:
+ 引理1 设$p$和$q$是两个奇数模数, $\mathbf c$是一个整数向量. 令$\mathbf c&#39;$为一个距离$(p/q)\cdot\mathbf c$最近的一个整数向量满足$\mathbf c&#39;=\mathbf c\mod 2$.</description>
+    </item>
+    
+    <item>
+      <title>同态加密(2) BV11b方案</title>
+      <link>https://lingerois.com/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%862-bv11b%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Wed, 14 Aug 2019 13:06:22 +0000</pubDate>
+      
+      <guid>https://lingerois.com/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%862-bv11b%E6%96%B9%E6%A1%88/</guid>
+      <description>原文作者之一Zvika Brakerski在2018 CIS冬令营上为学员讲解全同态加密原文作者之一Vinod Vaikuntanathan在2018 CIS冬令营上为学员讲解全同态加密
+CIS 2018回顾
+符号说明 本文中, 我们采用方括号+下标的方式来表示向量中的具体某一位. 例如向量$\mathbf s$的第$i$位用$\mathbf s[i]$来表示. 我们有时候会用下标0来表示不存在的下标, 例如$h_i$可以用$h_{i,0}$来表示, 这样做的好处是, 我们不用显式地提及$h_i$, 而是用$h_{i,j}$就可以表示所有的$h_{i,j\neq 0}$和$h_i$来避免描述地冗长.
+原文中的安全参数采用的是$\kappa$, 由于这个字母容易和$k$混淆, 且为了与我其他博文统一, 我修改为了$\lambda$.
+简介 假设我们采用的LWE的噪声为偶数, 即具有$2\mathbf e$的形式, 则最终我们得到的加密密文具有$(\mathbf a,b=\langle\mathbf a,\mathbf s\rangle+2e+m)\in\mathbb Z_q^n\times \mathbb Z_q$的形式, 其中$m\in\lbrace0,1\rbrace$是我们加密的密文. 在有了这种形式的密文后, 通过$b-\langle\mathbf a,\mathbf s\rangle=2e+m$, 再模上2方可解除$m$.
+如果我们将解密的过程看作是一个函数, 即对于$\bf a$来说, $f_{\mathbf a,b}(\mathbf x)=b-\langle\mathbf a,\mathbf x\rangle \mod q$, 那么当我们输入正确的密钥$\mathbf s$时, 最终计算出的结果再模上2就是解密的结果. 如果$\mathbf a$具有$n$维, 我们有 $$ f_{\mathbf a,b}(\mathbf x)=b-\sum_{i=1}^n \mathbf a[i]\cdot \mathbf s[i] $$ 先假设另一个明文$m&#39;\in\lbrace 0,1\rbrace$采用$(\mathbf a&#39;,b&#39;=\langle\mathbf a&#39;,s\rangle+2e&#39;+m&#39;)$进行加密, 那么很显然的, $f_{\mathbf a&#39;,b&#39;}(\mathbf x)$可以用来描述其解密过程.</description>
+    </item>
+    
+    <item>
+      <title>Cryptography (1) One-Way Function</title>
+      <link>https://lingerois.com/p/cryptography-1-one-way-function/</link>
       <pubDate>Sun, 11 Aug 2019 21:29:13 +0000</pubDate>
       
-      <guid>https://flyzebraV.github.io/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%861-gsw13%E6%96%B9%E6%A1%88/</guid>
+      <guid>https://lingerois.com/p/cryptography-1-one-way-function/</guid>
+      <description>Some Information about the Course
+In this course, we mainly talk about the foundation of Cryptography. We talk about the big picture of cryptography, not the cryptosystem based on a specific assumption. Basic knowledge of probability theory, computational complexity is necessary for this course.
+This serie of notes mainly follows Goldreich&amp;rsquo;s legendary book Foundations of Cryptograph. With some basic knowledge of computational complexity, one would enjoy the book a lot. (Though still difficult to learn.</description>
+    </item>
+    
+    <item>
+      <title>同态加密(1) GSW方案</title>
+      <link>https://lingerois.com/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%861-gsw%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Sun, 11 Aug 2019 21:29:13 +0000</pubDate>
+      
+      <guid>https://lingerois.com/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%861-gsw%E6%96%B9%E6%A1%88/</guid>
       <description>GSW方案是由Craig Gentry1, Amit Sahai与Brent Waters于2013年提出的方案, 发表于论文[GSW13]中.
 GSW方案确实如论文标题一样, 概念清晰明了, 其Intuition简单到一个刚学完线性代数的大一新生也能理解. GSW还支持基于属性的加密, 但本文中我们将不介绍这一部分内容.
 当然, 完全理解GSW方案仍然需要用到一些比较进阶的知识, 如LWE问题的困难性等. 我们在本文中不会对这些知识做过多的介绍, 这些知识将在今后其他的博文中介绍.
@@ -20,6 +61,18 @@ Basic Intuition 密文的基本格式 最基本的GSW同态加密方案的私钥
 一个需要注意的地方就是, 虽然$\mu_i$取自${0,1}$, 但被视作是$\mathbb Z_q$中的元素, 因此具体的运算也是按照$\mathbb Z_q$的运算方式来进行.
 我们也可以将噪声(error)显式地写出来, 记作 $$ C_i\mathbf v=\mu_i\mathbf v+\mathbf e $$ 其中$\mathbf e$是非常小的向量. 因此可以看出, 如果$\mathbf e$确实是一个较小的噪声, 那么我们就可以正确地解出$\mu_i$.
 乘法同态性质 现在我们来验证该加密方案具有同态性质. 现在假设有两个密文$C_1, C_2$, 对对应的明文分别是$\mu_1,\mu_2$, 即 $$ \begin{aligned} C_1\mathbf v=\mu_1\mathbf v+\mathbf e_1 \newline C_2\mathbf v=\mu_2\mathbf v+\mathbf e_2 \end{aligned} $$ 其中$\mathbf e_1,\mathbf e_2$均为较小的噪声, 那么令$C^\times=C_1\cdot C_2$, 我们检验$C^\times$的解密结果 $$ \begin{aligned} C^\times\mathbf v &amp;amp;=(C_1\cdot C_2)\mathbf v \newline &amp;amp;=C_1(\mu_2\mathbf v+\mathbf e_2) \newline &amp;amp;=\mu_2(\mu_1\mathbf v+\mathbf e_1)+C_1\mathbf e_2\newline &amp;amp;= \mu_1\mu_2\mathbf v+\mu_2\mathbf e_1+C_1\mathbf e_2 \end{aligned} $$ 这里可以看出, $\mu_2\mathbf e_1$确实是一个比较小的噪声项, 但是要让$C^\times$的噪声比较小, 那么就需要让$C_1$是一个较小的矩阵(即其最大的元素较小), 我们稍后会解释如何做到这一点.</description>
+    </item>
+    
+    <item>
+      <title>Averaging Argument</title>
+      <link>https://lingerois.com/p/averaging-argument/</link>
+      <pubDate>Thu, 21 Mar 2019 23:45:57 +0000</pubDate>
+      
+      <guid>https://lingerois.com/p/averaging-argument/</guid>
+      <description>The following example can be regarded as a generalization of Pigeonhole Principle.
+ Example 1
+If every person likes at least $1/3$ of the books in a library, then the library has a book, which at least $1/3$ of people like.
+ Proof: Suppose there are $N$ people in total and $B$ books in the library. Let all the people leave a mark on the books they like, then there are at least $NB/3$ marks.</description>
     </item>
     
   </channel>

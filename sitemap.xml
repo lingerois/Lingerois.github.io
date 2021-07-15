@@ -2,67 +2,120 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://flyzebraV.github.io/categories/</loc>
+    <loc>https://lingerois.com/categories/</loc>
+    <lastmod>2021-07-08T14:03:36+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/</loc>
+    <lastmod>2021-07-08T14:03:36+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/post/</loc>
+    <lastmod>2021-07-08T14:03:36+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/</loc>
+    <lastmod>2021-07-08T14:03:36+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/%E5%90%8E%E9%87%8F%E5%AD%90%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
+    <lastmod>2021-07-08T14:03:36+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/p/%E5%9F%BA%E4%BA%8E%E6%A0%BC%E7%9A%84%E5%AF%86%E7%A0%81-%E5%9F%BA%E7%9F%B3%E7%AF%871-%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2021-07-08T14:03:36+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
+    <lastmod>2021-07-08T14:03:36+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/categories/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2021-07-08T14:03:36+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/%E6%A0%BC/</loc>
+    <lastmod>2021-07-08T14:03:36+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</loc>
+    <lastmod>2021-07-08T14:03:36+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/</loc>
+    <lastmod>2021-07-06T17:01:01+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/%E5%9B%BE%E8%AE%BA/</loc>
+    <lastmod>2021-07-06T17:01:01+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-07-06T17:01:01+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/categories/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-07-06T17:01:01+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</loc>
+    <lastmod>2021-07-06T17:01:01+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/p/field-theory-1-field-field-extension/</loc>
+    <lastmod>2021-03-21T14:31:42+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/%E4%BB%A3%E6%95%B0/</loc>
+    <lastmod>2021-03-21T14:31:42+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2021-03-21T14:31:42+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/p/%E6%95%B0%E8%AE%BA%E5%8F%98%E6%8D%A2%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2020-04-12T21:19:24+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A7/</loc>
+    <lastmod>2019-08-20T23:16:19+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A73-np%E5%AE%8C%E5%A4%87%E6%80%A7/</loc>
+    <lastmod>2019-08-20T23:16:19+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86/</loc>
+    <lastmod>2019-08-18T15:40:01+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%863-bgv%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2019-08-18T15:40:01+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
+    <lastmod>2019-08-18T15:40:01+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%862-bv11b%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2019-08-14T13:06:22+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/p/cryptography-1-one-way-function/</loc>
     <lastmod>2019-08-11T21:29:13+00:00</lastmod>
   </url><url>
-    <loc>https://flyzebraV.github.io/</loc>
+    <loc>https://lingerois.com/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%861-gsw%E6%96%B9%E6%A1%88/</loc>
     <lastmod>2019-08-11T21:29:13+00:00</lastmod>
   </url><url>
-    <loc>https://flyzebraV.github.io/post/</loc>
-    <lastmod>2019-08-11T21:29:13+00:00</lastmod>
-  </url><url>
-    <loc>https://flyzebraV.github.io/tags/</loc>
-    <lastmod>2019-08-11T21:29:13+00:00</lastmod>
-  </url><url>
-    <loc>https://flyzebraV.github.io/tags/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%86/</loc>
-    <lastmod>2019-08-11T21:29:13+00:00</lastmod>
-  </url><url>
-    <loc>https://flyzebraV.github.io/p/%E5%90%8C%E6%80%81%E5%8A%A0%E5%AF%861-gsw13%E6%96%B9%E6%A1%88/</loc>
-    <lastmod>2019-08-11T21:29:13+00:00</lastmod>
-  </url><url>
-    <loc>https://flyzebraV.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
-    <lastmod>2019-08-11T21:29:13+00:00</lastmod>
-  </url><url>
-    <loc>https://flyzebraV.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
-    <lastmod>2019-08-11T21:29:13+00:00</lastmod>
-  </url><url>
-    <loc>https://flyzebraV.github.io/archives/</loc>
+    <loc>https://lingerois.com/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://flyzebraV.github.io/page/</loc>
+    <loc>https://lingerois.com/page/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://flyzebraV.github.io/tags/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A7/</loc>
+    <loc>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A72-%E5%9B%BE%E7%81%B5%E6%9C%BA%E4%B8%8E%E5%8F%AF%E8%AE%A1%E7%AE%97%E6%80%A7/</loc>
+    <lastmod>2019-03-29T12:06:45+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/p/averaging-argument/</loc>
+    <lastmod>2019-03-21T23:45:57+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/</loc>
+    <lastmod>2019-03-21T23:45:57+00:00</lastmod>
+  </url><url>
+    <loc>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A71-%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2019-03-05T12:06:45+00:00</lastmod>
   </url><url>
-    <loc>https://flyzebraV.github.io/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A71-%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80/</loc>
-    <lastmod>2019-03-05T12:06:45+00:00</lastmod>
-  </url><url>
-    <loc>https://flyzebraV.github.io/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</loc>
-    <lastmod>2019-03-05T12:06:45+00:00</lastmod>
-  </url><url>
-    <loc>https://flyzebraV.github.io/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/</loc>
-    <lastmod>2019-03-05T12:06:45+00:00</lastmod>
-  </url><url>
-    <loc>https://flyzebraV.github.io/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A70-%E7%9B%AE%E5%BD%95/</loc>
+    <loc>https://lingerois.com/p/%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E6%80%A70-%E7%9B%AE%E5%BD%95/</loc>
     <lastmod>2019-03-04T21:29:13+00:00</lastmod>
   </url><url>
-    <loc>https://flyzebraV.github.io/about/</loc>
+    <loc>https://lingerois.com/about/</loc>
   </url><url>
-    <loc>https://flyzebraV.github.io/comment/</loc>
+    <loc>https://lingerois.com/comment/</loc>
   </url><url>
-    <loc>https://flyzebraV.github.io/search/</loc>
+    <loc>https://lingerois.com/search/</loc>
   </url><url>
-    <loc>https://flyzebraV.github.io/categories/%E5%85%B6%E4%BB%96/</loc>
+    <loc>https://lingerois.com/categories/%E5%85%B6%E4%BB%96/</loc>
   </url><url>
-    <loc>https://flyzebraV.github.io/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/</loc>
+    <loc>https://lingerois.com/categories/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/</loc>
   </url><url>
-    <loc>https://flyzebraV.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
+    <loc>https://lingerois.com/categories/%E8%AE%B0%E5%BD%95/</loc>
   </url><url>
-    <loc>https://flyzebraV.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
-  </url><url>
-    <loc>https://flyzebraV.github.io/categories/%E8%AE%B0%E5%BD%95/</loc>
-  </url><url>
-    <loc>https://flyzebraV.github.io/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/</loc>
+    <loc>https://lingerois.com/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/</loc>
   </url>
 </urlset>

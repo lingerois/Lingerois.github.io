@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>图论 on Lingerois</title>
+    <link>https://lingerois.com/tags/%E5%9B%BE%E8%AE%BA/</link>
+    <description>Recent content in 图论 on Lingerois</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 06 Jul 2021 17:01:01 +0000</lastBuildDate><atom:link href="https://lingerois.com/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>伪随机性(1) 随机算法 谱图论</title>
+      <link>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/</link>
+      <pubDate>Tue, 06 Jul 2021 17:01:01 +0000</pubDate>
+      
+      <guid>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/</guid>
+      <description>本章主要通过一些随机化的算法介绍了两个工具:
+ 马尔可夫不等式(Markov Inequality)和切尔诺夫界(Chernoff Bound) 用代数的方法研究图论, 即随机游走  笔记中, 我们不会关注本章中讲的具体算法, 而是主要关注有关谱图论(spetral graph theory)的部分.
+约定
+ 在研究图$G$, 一般认为$G=(V,E)$, 其中$V,E$分别是点集和边集. 一般记为$|V|=n$, 图算法的复杂度也用有关$n$的函数来表示. 在本系列中, 如果向量(如$x$)出现在矩阵(如$M$)前面, 则$x$是行向量, 反之$x$为列向量. 记本文记号$xMx$相当于标准记号$\mathbf x^T\mathbf M\mathbf x$.  概率不等式  引理 Markov不等式
+令$X$是一个飞负的随机变量, 则对于任意$\alpha&amp;gt;0$, 有 $$ \Pr[X\geq \alpha]\leq \frac{\operatorname E[X]}{\alpha} $$
+ Markov不等式的证明非常简单, 也显得非常粗略, 但是它对于推出Chernoff界已经足够了.
+书中介绍的是广义的Chernoff界, 证明同伯努利分布的证明略有不同.
+ 定理 Chernoff界
+令$X_1,\cdots,X_t$是独立随机变量, 且都在$[0,1]$上取值, 令$X=(\sum_i X_i)/t$, 且$\mu=\operatorname{E}[X]$. 则有 $$ \Pr[|X-\mu|\geq \varepsilon]\leq 2\operatorname{exp}(-t\varepsilon^2/4) $$
+ Chernoff界在随机算法中的非常重要, 它使得我们可以重复一个随机算法多次, 以大多数次数的输出结果为最终结果, 使得我们计算正确的概率显著提高.
+随机游走 伪随机性研究的一个重要工具就是谱图论. 它允许我们用代数的手段来研究图论. 谱图论中, 我们经常用到digraph和无向图:</description>
+    </item>
+    
+  </channel>
+</rss>
