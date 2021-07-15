@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>日常 on MathLife</title>
+    <link>https://flyzebraV.github.io/categories/%E6%97%A5%E5%B8%B8/</link>
+    <description>Recent content in 日常 on MathLife</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://flyzebraV.github.io/categories/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>独立文件夹标题</title>
+      <link>https://flyzebraV.github.io/p/%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://flyzebraV.github.io/p/%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>hhh Test</description>
+    </item>
+    
+    <item>
+      <title>标题</title>
+      <link>https://flyzebraV.github.io/p/smart-watch/</link>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://flyzebraV.github.io/p/smart-watch/</guid>
+      <description>结论 Test</description>
+    </item>
+    
+  </channel>
+</rss>
