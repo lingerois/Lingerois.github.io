@@ -6,7 +6,25 @@
     <description>Recent content in 算法 on Lingerois</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Jul 2021 17:01:01 +0000</lastBuildDate><atom:link href="https://lingerois.com/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jul 2021 17:05:55 +0000</lastBuildDate><atom:link href="https://lingerois.com/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>伪随机性(2) 基础去随机方法</title>
+      <link>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A72-%E5%9F%BA%E7%A1%80%E5%8E%BB%E9%9A%8F%E6%9C%BA%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Tue, 13 Jul 2021 17:05:55 +0000</pubDate>
+      
+      <guid>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A72-%E5%9F%BA%E7%A1%80%E5%8E%BB%E9%9A%8F%E6%9C%BA%E6%96%B9%E6%B3%95/</guid>
+      <description>本节中, 我们主要考虑PPT时间内的随机算法的去随机化, 当问题是判定问题时, 能被这样求解的问题即为$\mathbf{BPP}$问题.
+枚举 枚举是相当简单的, 对于$L\in\mathbf{BPP}$的一个PPT算法$\mathcal A$, $\mathcal A(x)$其用到的随机比特数必然是$\operatorname{poly}(|x|)$, 因此, 我们可以用一个确定性算法来判定$L$, 该算法
+ 枚举这$2^{\operatorname{poly}(|x|)}$个随机比特$r\in{0,1}^{\operatorname{poly}(|x|)}$, 计算$\mathcal A(x;r)$ 统计满足$\mathcal A(x;r)=1$的$r$所占的比例, 如果达到$\mathcal A$要求的输出$1$的阈值, 则输出$1$, 否则输出$0$.  显然, 上述算法能够正确判定$L$, 而其运行时间是$O(2^{\operatorname{poly}(|x|)})$, 因此我们可以证明$\mathbf{BPP}\in \mathbf{EXP}$, 即
+ 定理
+$\mathbf{BPP}\in \mathbf{EXP}$.
+ 一个比较惊人的事实是, 我们目前无法证明$\mathbf{BPP}$和$\mathbf{NP}$的关系, $\mathbf{BPP}\subsetneq \mathbf{NP}$, $\mathbf{NP}\subsetneq \mathbf{BPP}$或者$\mathbf{BPP}=\mathbf{NP}$都是可能的.
+非一致性 我们可以证明$\mathbf{BPP}\in \mathbf{P}_{/\operatorname{poly}}$, 即可以用一个多项式大小的电路族来判定任意$\mathbf{BPP}$问题. 证明的方式也很简单: 只需要证明对于每个长度的输入, 都有一个$L\in\mathbf{BPP}$的某个算法$\mathcal A$中用到的随机串$r$, 满足$\mathcal A(x;r)=1\iff x\in L$. 如此, 就可以把这个$r$作为advice.
+具体可以参考文章Averaging Argument.
+非确定性 虽然$\mathbf{BPP}$和$\mathbf{NP}$的关系是未知的, 但是我们可以证明$\mathbf{RP}\in\mathbf{NP}$.
+对于$L\in\mathbf{RP}$问题来说, 可以构造一个算法$\mathcal A$判定$L$, 且该算法没有$0$-sided error, 即永不可能在$x\notin L$时输出$1$. 那么, 对于任意$y\in L$, 我们认为$r$是$y$的witness, 如果$\mathcal A(y;r)=1$.</description>
+    </item>
+    
     <item>
       <title>伪随机性(1) 随机算法 谱图论</title>
       <link>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A71-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%B0%B1%E5%9B%BE%E8%AE%BA/</link>

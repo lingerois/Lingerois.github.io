@@ -6,7 +6,85 @@
         <description>Recent content on Lingerois</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 08 Jul 2021 14:03:36 +0000</lastBuildDate><atom:link href="https://lingerois.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 13 Jul 2021 17:05:55 +0000</lastBuildDate><atom:link href="https://lingerois.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>伪随机性(2) 基础去随机方法</title>
+        <link>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A72-%E5%9F%BA%E7%A1%80%E5%8E%BB%E9%9A%8F%E6%9C%BA%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Tue, 13 Jul 2021 17:05:55 +0000</pubDate>
+        
+        <guid>https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A72-%E5%9F%BA%E7%A1%80%E5%8E%BB%E9%9A%8F%E6%9C%BA%E6%96%B9%E6%B3%95/</guid>
+        <description>&lt;img src="https://lingerois.com/p/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%80%A72-%E5%9F%BA%E7%A1%80%E5%8E%BB%E9%9A%8F%E6%9C%BA%E6%96%B9%E6%B3%95/random.jpg" alt="Featured image of post 伪随机性(2) 基础去随机方法" /&gt;&lt;p&gt;本节中, 我们主要考虑PPT时间内的随机算法的去随机化, 当问题是判定问题时, 能被这样求解的问题即为$\mathbf{BPP}$问题.&lt;/p&gt;
+&lt;h1 id=&#34;枚举&#34;&gt;枚举&lt;/h1&gt;
+&lt;p&gt;枚举是相当简单的, 对于$L\in\mathbf{BPP}$的一个PPT算法$\mathcal A$, $\mathcal A(x)$其用到的随机比特数必然是$\operatorname{poly}(|x|)$, 因此, 我们可以用一个确定性算法来判定$L$, 该算法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;枚举这$2^{\operatorname{poly}(|x|)}$个随机比特$r\in{0,1}^{\operatorname{poly}(|x|)}$, 计算$\mathcal A(x;r)$&lt;/li&gt;
+&lt;li&gt;统计满足$\mathcal A(x;r)=1$的$r$所占的比例, 如果达到$\mathcal A$要求的输出$1$的阈值, 则输出$1$, 否则输出$0$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;显然, 上述算法能够正确判定$L$, 而其运行时间是$O(2^{\operatorname{poly}(|x|)})$, 因此我们可以证明$\mathbf{BPP}\in \mathbf{EXP}$, 即&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;定理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$\mathbf{BPP}\in \mathbf{EXP}$.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一个比较惊人的事实是, 我们目前无法证明$\mathbf{BPP}$和$\mathbf{NP}$的关系, $\mathbf{BPP}\subsetneq \mathbf{NP}$, $\mathbf{NP}\subsetneq \mathbf{BPP}$或者$\mathbf{BPP}=\mathbf{NP}$都是可能的.&lt;/p&gt;
+&lt;h1 id=&#34;非一致性&#34;&gt;非一致性&lt;/h1&gt;
+&lt;p&gt;我们可以证明$\mathbf{BPP}\in \mathbf{P}_{/\operatorname{poly}}$, 即可以用一个多项式大小的电路族来判定任意$\mathbf{BPP}$问题. 证明的方式也很简单: 只需要证明对于每个长度的输入, 都有一个$L\in\mathbf{BPP}$的某个算法$\mathcal A$中用到的随机串$r$, 满足$\mathcal A(x;r)=1\iff x\in L$. 如此, 就可以把这个$r$作为advice.&lt;/p&gt;
+&lt;p&gt;具体可以参考文章&lt;a class=&#34;link&#34; href=&#34;../averaging-argument/&#34; &gt;Averaging Argument&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;非确定性&#34;&gt;非确定性&lt;/h1&gt;
+&lt;p&gt;虽然$\mathbf{BPP}$和$\mathbf{NP}$的关系是未知的, 但是我们可以证明$\mathbf{RP}\in\mathbf{NP}$.&lt;/p&gt;
+&lt;p&gt;对于$L\in\mathbf{RP}$问题来说, 可以构造一个算法$\mathcal A$判定$L$, 且该算法没有$0$-sided error, 即永不可能在$x\notin L$时输出$1$. 那么, 对于任意$y\in L$, 我们认为$r$是$y$的witness, 如果$\mathcal A(y;r)=1$. 这样一来, 任意$x\notin L$就每一任何witness, 方可证明:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;定理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$\mathbf{RP}\in\mathbf{NP}$.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;对于$\mathbf{BPP}$的讨论会复杂一些. 如果读者熟悉计算复杂性的话, 我们可以证明$\mathbf{BPP}\in\Sigma_2\cap \Pi_2$. $\Sigma_2$和$\Pi_2$是落在$\mathbf{PH}$第二层的复杂性类, 前者包括所有形如$\exists y\forall z.P(x,y,z)$的论断, 后者包括所有$\forall y\exists z.P(x,,z)$的论断.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;定理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$\mathbf{BPP}\in\Sigma_2\cap \Pi_2$.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;该定理的证明思路是这样的, 我们将任意$L\in\mathbf{BPP}$用某个出错率低于$2^{-n}$的算法$\mathcal A$来表示, 假设其使用$m$个数基比特, 定义
+$$
+A_x={r:\mathcal A(x;r)=1}\subset \lbrace 0,1\rbrace^m
+$$
+那么对于$x\in L$, 其$A_x$就比较大, 我们定义$A_x$的偏移
+$$
+A_{x;s}={r\oplus s:r\in A_x}\subset \lbrace 0,1\rbrace^m
+$$
+这样, 选取少数个$s_1,\cdots, s_m$, 我们就有把握使得$A_{x;s_1}\cup \cdots\cup A_{x;s_m}=\lbrace 0,1\rbrace^m$. 对于$x\neq L$, 由于其每个$A_{x;s}$都很小, 我们有把我认为无论我们如何选取$s_1,\cdots, s_m$, 都有$A_{x;s_1}\cup \cdots\cup A_{x;s_m}=\lbrace 0,1\rbrace^m\subsetneq \lbrace 0,1\rbrace^m$. 严格来说, 我们需要将上述说法转换为QBF的形式, 即, 我们要证明的是
+$$
+\begin{align}
+\begin{array}{rlrl}
+x \in L &amp;amp; \Rightarrow \exists s_{1}, s_{2}, \ldots, s_{m} \in{0,1}^{m} \forall r \in{0,1}^{m}.  r \in \bigcup_{i=1}^{m}A_{x;s_i} \newline
+&amp;amp; \Leftrightarrow \exists s_{1}, s_{2}, \ldots, s_{m} \in{0,1}^{m} \forall r \in{0,1}^{m}.  \bigvee_{i=1}^{m}\left(A\left(x ; r \oplus s_{i}\right)=1\right) \newline
+x \notin L &amp;amp; \Rightarrow \forall s_{1}, s_{2}, \ldots, s_{m} \in{0,1}^{m} \exists r \in{0,1}^{m}.  r \notin \bigcup_{i=1}^{m}A_{x;s_i} \newline
+&amp;amp; \Leftrightarrow \forall s_{1}, s_{2}, \ldots, s_{m} \in{0,1}^{m} \exists r \in{0,1}^{m}.  \neg \bigvee_{i=1}^{m}\left(A\left(x ; r \oplus s_{i}\right)=1\right)
+\end{array}
+\end{align}
+$$
+我们首先证明第二个论断. 当$s_1,\cdots, s_m$固定的时候, 随机选取$R$, 我们计算$R \in \bigcup_{i=1}^{m}A_{x;s_i}$的概率
+$$
+\begin{aligned}
+\operatorname{Pr}\left[R \in \bigcup_{i}A_{x;s_i}\right] &amp;amp; \leq \sum_{i} \operatorname{Pr}\left[R \in A_{x;s_i}\right] \&lt;br&gt;
+&amp;amp;&amp;lt;m \cdot 2^{-n}&amp;lt;1
+\end{aligned}
+$$
+因此, 无论我们如何选择$s_{1}, s_{2}, \ldots, s_{m}$, 总有某个$r\notin \bigcup_{i=1}^{m}A_{x;s_i}$, 这便是我们要证明的结论.&lt;/p&gt;
+&lt;p&gt;现在继续证明第一个论断. 更加论断的形式, 我们均匀选取$S_1,\cdots, S_m$, 并证明对于某个固定的$r$, $r\notin \bigcup_i A_{x;s_i}$的概率. 根据选取方式, 所有事件$r\notin A_{x;S_i}$是相互独立的, 因此
+$$
+\begin{aligned}
+\operatorname{Pr}\left[r \notin \bigcup_{i}A_{x;S_i}\right] &amp;amp;=\prod_{i} \operatorname{Pr}\left[r \notin A_{x;S_i}\right] \&lt;br&gt;
+&amp;amp;=\prod_{i} \operatorname{Pr}\left[S_{i} \notin A_{x;r}\right] \&lt;br&gt;
+&amp;amp;&amp;lt;\left(2^{-n}\right)^{m}
+\end{aligned}
+$$
+对于每个$r$来说, 上述结论都是成立的, 那么存在一个$r$满足上述论断的概率呢? 无非最多就是全部加起来:
+$$
+\operatorname{Pr}\left[\exists r. r \notin \bigcup_{i}A_{x;S_i} \right]&amp;lt;2^{m} \cdot\left(2^{-n}\right)^{m} \leq 1
+$$
+注意上述概率是在均匀选取$S_1,\cdots, S_m$下的概率, 那么也就是说, 存在$s_1,\cdots, s_m$使得$\exists r. r \notin \bigcup_{i}A_{x;S_i} $不成立. 即 存在$s_1,\cdots, s_m$使得$\forall r. r\in \bigcup_i A_{x;s_i}$成立, 这便是我们要的结论.&lt;/p&gt;
+&lt;h1 id=&#34;习题&#34;&gt;习题&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Problem 2.1&lt;/strong&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>基于格的密码 基石篇(1) 基础</title>
         <link>https://lingerois.com/p/%E5%9F%BA%E4%BA%8E%E6%A0%BC%E7%9A%84%E5%AF%86%E7%A0%81-%E5%9F%BA%E7%9F%B3%E7%AF%871-%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Thu, 08 Jul 2021 14:03:36 +0000</pubDate>
